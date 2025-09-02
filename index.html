@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreativeDesign | Graphic Design Studio</title>
+    <title>ABUMUHA | Graphic Designer Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,38 +14,36 @@
         }
 
         :root {
-            --primary: #FF4D5A;
-            --secondary: #2D4059;
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --accent: #36D1DC;
             --light: #F8F9FA;
-            --dark: #212529;
-            --accent: #FFBD69;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --dark: #2D2D2D;
+            --text-color: #2D2D2D;
+            --body-bg: #FFFFFF;
             --card-bg: #FFFFFF;
-            --text-color: #212529;
-            --body-bg: #F8F9FA;
             --header-bg: rgba(255, 255, 255, 0.95);
-            --footer-bg: #2D4059;
-            --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            --nav-link-color: #212529;
+            --footer-bg: #2D2D2D;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         body.dark-mode {
-            --primary: #FF4D5A;
-            --secondary: #8BA0BC;
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --accent: #36D1DC;
             --light: #1A1A1A;
             --dark: #F8F9FA;
-            --accent: #FFBD69;
-            --card-bg: #2A2A2A;
             --text-color: #F8F9FA;
             --body-bg: #121212;
-            --header-bg: rgba(42, 42, 42, 0.95);
-            --footer-bg: #1A1A1A;
-            --shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-            --nav-link-color: #F8F9FA;
+            --card-bg: #1E1E1E;
+            --header-bg: rgba(30, 30, 30, 0.95);
+            --footer-bg: #0D0D0D;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: var(--body-bg);
             color: var(--text-color);
             line-height: 1.6;
@@ -54,7 +52,7 @@
         }
 
         h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             color: var(--text-color);
         }
@@ -102,19 +100,21 @@
             color: white;
             font-weight: bold;
             font-size: 20px;
-            box-shadow: 0 4px 12px rgba(255, 77, 90, 0.3);
+            box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
             transition: var(--transition);
         }
 
         .logo-container:hover .logo {
             transform: rotate(15deg);
-            box-shadow: 0 6px 16px rgba(255, 77, 90, 0.4);
+            box-shadow: 0 6px 16px rgba(108, 99, 255, 0.4);
         }
 
         .logo-text {
             font-size: 24px;
             font-weight: 700;
-            color: var(--text-color);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             letter-spacing: 0.5px;
             transition: var(--transition);
         }
@@ -127,7 +127,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--nav-link-color);
+            color: var(--text-color);
             font-weight: 500;
             transition: var(--transition);
             position: relative;
@@ -186,7 +186,7 @@
         /* Hero Section */
         .hero {
             padding: 180px 0 120px;
-            background: linear-gradient(135deg, rgba(255, 77, 90, 0.08) 0%, rgba(255, 189, 105, 0.08) 100%);
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.08) 0%, rgba(54, 209, 220, 0.08) 100%);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -201,7 +201,7 @@
             width: 300px;
             height: 300px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(255, 77, 90, 0.15) 0%, rgba(255, 189, 105, 0.15) 100%);
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.15) 0%, rgba(54, 209, 220, 0.15) 100%);
         }
 
         .hero::after {
@@ -212,13 +212,15 @@
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(255, 77, 90, 0.1) 0%, rgba(255, 189, 105, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(54, 209, 220, 0.1) 100%);
         }
 
         .hero h1 {
             font-size: 3.8rem;
             margin-bottom: 25px;
-            color: var(--secondary);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             line-height: 1.2;
             transition: var(--transition);
         }
@@ -234,7 +236,7 @@
         .btn {
             display: inline-block;
             padding: 14px 35px;
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
             border: none;
             border-radius: 50px;
@@ -242,7 +244,7 @@
             text-decoration: none;
             transition: var(--transition);
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(255, 77, 90, 0.35);
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.35);
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -255,14 +257,14 @@
             left: 0;
             width: 0%;
             height: 100%;
-            background: var(--secondary);
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
             transition: var(--transition);
             z-index: -1;
         }
 
         .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(255, 77, 90, 0.5);
+            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.5);
         }
 
         .btn:hover::before {
@@ -272,14 +274,14 @@
         /* Portfolio Section */
         .portfolio {
             padding: 100px 0;
-            background-color: var(--card-bg);
+            background-color: var(--body-bg);
             transition: var(--transition);
         }
 
         .section-title {
             text-align: center;
             margin-bottom: 60px;
-            color: var(--secondary);
+            color: var(--text-color);
             transition: var(--transition);
         }
 
@@ -315,27 +317,27 @@
             transition: var(--transition);
             position: relative;
             height: 280px;
-            background: linear-gradient(45deg, #ff4d5a, #ffbd69);
+            background: linear-gradient(45deg, var(--primary), var(--accent));
         }
 
         .portfolio-item:nth-child(2) {
-            background: linear-gradient(45deg, #2d4059, #6a89cc);
+            background: linear-gradient(45deg, var(--secondary), #FF8EA1);
         }
 
         .portfolio-item:nth-child(3) {
-            background: linear-gradient(45deg, #00b894, #00cec9);
+            background: linear-gradient(45deg, #36D1DC, #5B86E5);
         }
 
         .portfolio-item:nth-child(4) {
-            background: linear-gradient(45deg, #fd79a8, #e84393);
+            background: linear-gradient(45deg, #FF6584, #FF8EA1);
         }
 
         .portfolio-item:nth-child(5) {
-            background: linear-gradient(45deg, #fdcb6e, #e17055);
+            background: linear-gradient(45deg, #6C63FF, #36D1DC);
         }
 
         .portfolio-item:nth-child(6) {
-            background: linear-gradient(45deg, #74b9ff, #0984e3);
+            background: linear-gradient(45deg, #36D1DC, var(--secondary));
         }
 
         .portfolio-item:hover {
@@ -356,7 +358,7 @@
         }
 
         .dark-mode .portfolio-content {
-            background: rgba(42, 42, 42, 0.95);
+            background: rgba(30, 30, 30, 0.95);
         }
 
         .portfolio-item:hover .portfolio-content {
@@ -366,7 +368,7 @@
         /* About Section */
         .about {
             padding: 100px 0;
-            background-color: var(--body-bg);
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.05) 0%, rgba(54, 209, 220, 0.05) 100%);
             transition: var(--transition);
         }
 
@@ -381,7 +383,7 @@
         }
 
         .about-text h2 {
-            color: var(--secondary);
+            color: var(--text-color);
             margin-bottom: 25px;
             font-size: 2.5rem;
         }
@@ -429,7 +431,7 @@
         .service-item {
             padding: 35px 30px;
             border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            box-shadow: var(--shadow);
             transition: var(--transition);
             text-align: center;
             background: var(--card-bg);
@@ -447,7 +449,9 @@
 
         .service-icon {
             font-size: 48px;
-            color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 25px;
             transition: var(--transition);
         }
@@ -458,7 +462,7 @@
 
         .service-item h3 {
             margin-bottom: 15px;
-            color: var(--secondary);
+            color: var(--text-color);
         }
 
         .service-item p {
@@ -469,7 +473,7 @@
         /* Testimonials */
         .testimonials {
             padding: 100px 0;
-            background: linear-gradient(135deg, rgba(255, 77, 90, 0.05) 0%, rgba(255, 189, 105, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.05) 0%, rgba(54, 209, 220, 0.05) 100%);
             transition: var(--transition);
         }
 
@@ -483,7 +487,7 @@
             background: var(--card-bg);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            box-shadow: var(--shadow);
             transition: var(--transition);
         }
 
@@ -516,7 +520,7 @@
 
         .author-details h4 {
             margin-bottom: 5px;
-            color: var(--secondary);
+            color: var(--text-color);
         }
 
         .author-details p {
@@ -541,7 +545,7 @@
             background: var(--card-bg);
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: var(--shadow);
             transition: var(--transition);
         }
 
@@ -553,7 +557,7 @@
             display: block;
             margin-bottom: 10px;
             font-weight: 500;
-            color: var(--secondary);
+            color: var(--text-color);
         }
 
         .form-group input,
@@ -563,7 +567,7 @@
             border: 1px solid #ddd;
             border-radius: 10px;
             font-size: 16px;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
             transition: var(--transition);
             background-color: var(--card-bg);
             color: var(--text-color);
@@ -578,7 +582,7 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255, 77, 90, 0.2);
+            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
         }
 
         .form-group textarea {
@@ -588,7 +592,7 @@
 
         .contact-info {
             flex: 1;
-            background: var(--secondary);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             padding: 40px;
             border-radius: 20px;
             color: white;
@@ -611,8 +615,34 @@
         .info-icon {
             margin-right: 15px;
             font-size: 22px;
-            color: var(--accent);
+            color: white;
             width: 30px;
+        }
+
+        .social-contact {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-contact a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 20px;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-contact a:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-5px);
         }
 
         /* Footer */
@@ -690,6 +720,26 @@
             opacity: 0.8;
         }
 
+        .copyright a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .copyright a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 1s ease forwards;
+        }
+
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero h1 {
@@ -761,7 +811,7 @@
         <div class="container">
             <nav>
                 <div class="logo-container">
-                    <div class="logo">CD</div>
+                    <div class="logo">A</div>
                     <div class="logo-text">ABUMUHA</div>
                 </div>
                 <div class="nav-links">
@@ -785,18 +835,8 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h1>Transform Ideas Into <span style="color: var(--primary);">Visual Masterpieces</span></h1>
-            <p>ABUMUHA is a graphic designer  dedicated to creating stunning visuals that tell your story and elevate your brand to new heights,
-            As a passionate and innovative graphic designer, I bring ideas to life through compelling visual designs that captivate audiences. 
-                <h3>With expertise in</h3> 
-                <li>Adobe Creative Suite</li>
-                <li>Photoshop,</li>
-                <li>Illustrator</li>
-                <li> InDesign, etc.</li>
-                and a keen eye for detail, I craft stunning visuals that convey messages with clarity and impact.</p>
-    
-            
-            
+            <h1>Transform Ideas Into <span style="display: block;">Visual Masterpieces</span></h1>
+            <p>ABUMUHA is a graphic designer dedicated to creating stunning visuals that tell your story and elevate your brand to new heights. With expertise in Adobe Creative Suite, Photoshop, Illustrator, InDesign, and a keen eye for detail, I craft visuals that convey messages with clarity and impact.</p>
             <a href="#contact" class="btn">Get in Touch</a>
         </div>
     </section>
@@ -810,8 +850,8 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <div class="portfolio-content">
-                        <h3>Brand Identity:</h3>
-<p>Logos, branding, typography, color theory, and composition</p>                   
+                        <h3>Brand Identity</h3>
+                        <p>Logos, branding, typography, color theory, and composition</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
@@ -823,7 +863,7 @@
                 <div class="portfolio-item">
                     <div class="portfolio-content">
                         <h3>Web Design</h3>
-<p>UI/UX, web graphics, social media assets, and email templates</p>                   
+                        <p>UI/UX, web graphics, social media assets, and email templates</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
@@ -837,16 +877,11 @@
                         <h3>Marketing Materials</h3>
                         <p>Brochures, posters, flyers, business cards, and more</p>
                     </div>
-                    
                 </div>
-                <div class="portolio-item">
-                <div class="portfolio-container">
-                    <h3>creative design</h3></h2>
-                    <p>Creating and maintaining consistent brand identities</p>
                 <div class="portfolio-item">
                     <div class="portfolio-content">
-                        <h3>Typography</h3>
-                        <p>Custom lettering and font design</p>
+                        <h3>Creative Design</h3>
+                        <p>Creating and maintaining consistent brand identities</p>
                     </div>
                 </div>
             </div>
@@ -920,7 +955,7 @@
             <div class="testimonial-grid">
                 <div class="testimonial-item">
                     <div class="testimonial-text">
-                        "CreativeDesign transformed our brand identity completely. The new logo and visual system perfectly capture our company's vision and values."
+                        "ABUMUHA transformed our brand identity completely. The new logo and visual system perfectly capture our company's vision and values."
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar"></div>
@@ -932,7 +967,7 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="testimonial-text">
-                        "The packaging design created by ABUMAH helped us stand out in a crowded market. Our sales increased by 35% after the redesign."
+                        "The packaging design created by ABUMUHA helped us stand out in a crowded market. Our sales increased by 35% after the redesign."
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar"></div>
@@ -944,7 +979,7 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="testimonial-text">
-                        "Working with ABUMAH was a game-changer for our online presence. Their UI/UX design significantly improved our conversion rates."
+                        "Working with ABUMUHA was a game-changer for our online presence. Their UI/UX design significantly improved our conversion rates."
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar"></div>
@@ -969,11 +1004,11 @@
                     <form>
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" placeholder="ABUMUHAe">
+                            <input type="text" id="name" placeholder="Your Name">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="abubakarmuhammedsani51@gmail.com">
+                            <input type="email" id="email" placeholder="Your Email">
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
@@ -988,26 +1023,32 @@
                         <div class="info-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <p>hello@creativedesign.com</p>
+                        <p>abubakarmuhammedsani51@gmail.com</p>
                     </div>
                     <div class="info-item">
                         <div class="info-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <p>+234806194705</p>
-                        <p>=2548050440743</p>
+                        <p>+234 806 194 705</p>
+                        <p>+254 805 044 0743</p>
                     </div>
                     <div class="info-item">
                         <div class="info-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <p>123 Design Street, Creative City</p>
+                        <p>Creative Design Studio, Nigeria</p>
                     </div>
                     <div class="info-item">
                         <div class="info-icon">
                             <i class="fas fa-clock"></i>
                         </div>
                         <p>Mon-Fri: 9AM - 6PM</p>
+                    </div>
+                    <div class="social-contact">
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://t.me" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://wa.me/234806194705" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:abubakarmuhammedsani51@gmail.com"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
@@ -1020,8 +1061,8 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="logo-container">
-                        <div class="logo">CD</div>
-                        <div class="logo-text">CreativeDesign</div>
+                        <div class="logo">A</div>
+                        <div class="logo-text">ABUMUHA</div>
                     </div>
                     <p>Transforming ideas into visual masterpieces that elevate brands and captivate audiences.</p>
                     <div class="social-links">
@@ -1059,7 +1100,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 CreativeDesign. All rights reserved.</p>
+                <p>&copy; 2023 ABUMUHA Design. All rights reserved. | Design and published by <a href="https://supremeamer.com" target="_blank">Supremeamer</a></p>
             </div>
         </div>
     </footer>
@@ -1133,7 +1174,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.portfolio-item, .service-item, .testimonial-item').forEach(item => {
+        document.querySelectorAll('.portfolio-item, .service-item, .testimonial-item, .section-title, .about-content, .contact-content').forEach(item => {
             observer.observe(item);
         });
     </script>
