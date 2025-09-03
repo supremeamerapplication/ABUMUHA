@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - ABUMUHA Design Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --accent: #36D1DC;
+            --light: #F8F9FA;
+            --dark: #2D2D2D;
+            --text-color: #2D2D2D;
+            --body-bg: #FFFFFF;
+            --card-bg: #FFFFFF;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --footer-bg: #2D2D2D;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body.dark-mode {
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --accent: #36D1DC;
+            --light: #1A1A1A;
+            --dark: #F8F9FA;
+            --text-color: #F8F9FA;
+            --body-bg: #121212;
+            --card-bg: #1E1E1E;
+            --header-bg: rgba(30, 30, 30, 0.95);
+            --footer-bg: #0D0D0D;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--body-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--header-bg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 3px 8px rgba(108, 99, 255, 0.3);
+            transition: var(--transition);
+        }
+
+        .logo-container:hover .logo-img {
+            transform: rotate(15deg);
+            box-shadow: 0 5px 12px rgba(108, 99, 255, 0.4);
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+            z-index: 1001;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 140px 0 80px;
+            transition: var(--transition);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .policy-content {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .policy-section {
+            margin-bottom: 40px;
+        }
+
+        .policy-section h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .policy-section p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .policy-section ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .policy-section li {
+            margin-bottom: 8px;
+        }
+
+        .last-updated {
+            text-align: center;
+            margin-top: 30px;
+            font-style: italic;
+            color: var(--text-color);
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--footer-bg);
+            color: white;
+            padding: 50px 0 20px;
+            transition: var(--transition);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            width: 100%;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .footer-column p {
+            margin-bottom: 12px;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 8px;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .copyright a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .copyright a:hover {
+            text-decoration: underline;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(108, 99, 255, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 767px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--secondary);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                transition: right 0.3s ease;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links a {
+                color: white;
+                font-size: 1.2rem;
+            }
+            
+            .menu-btn {
+                display: block;
+            }
+            
+            .policy-content {
+                padding: 25px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            
+            .logo-img {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .policy-content {
+                padding: 20px;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container" onclick="window.location.href='index.html'">
+                    <img src="IMG-20250901-WA0014.jpg" alt="ABUMUHA Logo" class="logo-img">
+                    <div class="logo-text">ABUMUHA</div>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#portfolio">Portfolio</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#contact">Contact</a>
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <button class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Privacy Policy</h2>
+            </div>
+            <div class="policy-content">
+                <div class="policy-section">
+                    <h3>1. Introduction</h3>
+                    <p>Welcome to ABUMUHA Design Portfolio. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.</p>
+                    <p>We respect your privacy and are committed to protecting your personal data. Please read this privacy policy carefully to understand our views and practices regarding your personal data and how we will treat it.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>2. Information We Collect</h3>
+                    <p>We may collect and process the following data about you:</p>
+                    <ul>
+                        <li><strong>Personal Identification Information:</strong> Name, email address, phone number, etc., that you voluntarily provide when contacting us through our website forms.</li>
+                        <li><strong>Technical Data:</strong> Internet protocol (IP) address, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access this website.</li>
+                        <li><strong>Usage Data:</strong> Information about how you use our website, products, and services.</li>
+                        <li><strong>Marketing and Communications Data:</strong> Your preferences in receiving marketing from us and your communication preferences.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3>3. How We Use Your Information</h3>
+                    <p>We use the information we collect in the following ways:</p>
+                    <ul>
+                        <li>To provide, operate, and maintain our website</li>
+                        <li>To improve, personalize, and expand our website</li>
+                        <li>To understand and analyze how you use our website</li>
+                        <li>To develop new products, services, features, and functionality</li>
+                        <li>To communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes</li>
+                        <li>To process your requests and transactions</li>
+                        <li>To find and prevent fraud</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3>4. Cookies and Tracking Technologies</h3>
+                    <p>We use cookies and similar tracking technologies to track the activity on our website and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze our website.</p>
+                    <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our website.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>5. Data Security</h3>
+                    <p>We have implemented appropriate security measures to prevent your personal data from being accidentally lost, used, or accessed in an unauthorized way, altered, or disclosed.</p>
+                    <p>However, please note that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>6. Your Data Protection Rights</h3>
+                    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+                    <ul>
+                        <li>The right to access – You have the right to request copies of your personal data.</li>
+                        <li>The right to rectification – You have the right to request that we correct any information you believe is inaccurate or complete information you believe is incomplete.</li>
+                        <li>The right to erasure – You have the right to request that we erase your personal data, under certain conditions.</li>
+                        <li>The right to restrict processing – You have the right to request that we restrict the processing of your personal data, under certain conditions.</li>
+                        <li>The right to object to processing – You have the right to object to our processing of your personal data, under certain conditions.</li>
+                        <li>The right to data portability – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3>7. Changes to This Privacy Policy</h3>
+                    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the bottom of this Privacy Policy.</p>
+                    <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>8. Contact Us</h3>
+                    <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                    <ul>
+                        <li>By email: abubakarmuhammedsani51@gmail.com</li>
+                        <li>By phone: +234 806 194 7053</li>
+                        <li>By visiting this page on our website: <a href="index.html#contact">Contact Page</a></li>
+                    </ul>
+                </div>
+
+                <div class="last-updated">
+                    <p>Last updated: September 04, 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo-container" onclick="window.location.href='index.html'">
+                        <img src="IMG-20250901-WA0014.jpg" alt="ABUMUHA Logo" class="logo-img">
+                        <div class="logo-text">ABUMUHA</div>
+                    </div>
+                    <p>Transforming ideas into visual masterpieces that elevate brands and captivate audiences.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#portfolio">Portfolio</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <p>abubakarmuhammedsani51@gmail.com</p>
+                    <p>+234 806 194 7053</p>
+                    <p>Creative Design Studio, Nigeria</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 ABUMUHA Design. All rights reserved. | Design and published by <a href="https://supremeamer.com" target="_blank">Supremeamer</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference or respect OS preference
+        if (localStorage.getItem('theme') === 'dark' || 
+            (window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'))) {
+            document.body.classList.add('dark-mode');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
