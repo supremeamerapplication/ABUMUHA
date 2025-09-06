@@ -9,19 +9,19 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="ABUMUHA ">
     <meta name="msapplication-TileColor" content="#6C63FF">
-    
+
     <title>ABUMUHA | Graphic Designer Portfolio</title>
-    
+
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
-    
+    <link rel="icon" href="IMG-20250901-WA0014.jpg">
+    <link rel="apple-touch-icon" href="IMG-20250901-WA0014.jpg">
+
     <!-- Web App Manifest -->
-    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkFCVU1VSEEgRGVzaWduIFBvcnRmb2xpbyIsCiAgInNob3J0X25hbWUiOiAiQUJVTVVIQSIsCiAgImRlc2NyaXB0aW9uIjogIkdyYXBoaWMgRGVzaWduIFBvcnRmb2xpbyBvZiBBQlVNVUhBIiwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiM2QzYzRkYiLAogICJ0aGVtZV9jb2xvciI6ICIjNkM2M0ZGIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpSUhacFpYZENiM2c5SWpBZ01DQXpNREFnTVRnd0lqNDhjM1I1YkdVK1BISmtaanBTUkVZL0lEeG5QanhrYVhZZ1pHbHpjR3hoZEdVOUltWmhiSE5sTFRZd01UZ2lJR1E5SWsweU1ESXdNRElpSUdkeVlXUnBaVzUwUFNJeE1EQWlJSE4wY205clpUMGlkSEpoYm5Od1lYSmxibk5wYjI0aUlIZzlJakV3TURBd01EQWlQanh3UGp4d1lYSmxJR1J2Y0NCamJHRnpjejBpYzJWaGNtTXRjM1Z4ZFdGc2N5NWpiMjBpSUdROUlrMHlNREl3TURJaUlHSnNkSFZ5Ym1Gc1BTSjFjbXdvSTJ4cGJtVmhjbE5sY25abGNpQnBaRDBpYzNBelpUZzVORGdpSUhOMGNtOXJaVDA5SW1oMGRIQTZMeTkzZDNjdWR6TXViM0puTHpJd01EQXZjM1puSWo0OEwzQStQQzl6ZG1jKyIsCiAgICAgICJzaXplcyI6ICIxOTJ4MTkyIiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIKICAgIH0KICBdCn0=">
-    
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkFCVU1VSEEgRGVzaWduIFBvcnRmb2xpbyIsCiAgInNob3J0X25hbWUiOiAiQUJVTVVIQSIsCiAgImRlc2NyaXB0aW9uIjogIkdyYXBoaWMgRGVzaWduIFBvcnRmb2xpbyBvZiBBQlVNVUhBIiwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiM2QzYzRkYiLAogICJ0aGVtZV9jb2xvciI6ICIjNkM2M0ZGIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiSU1HLTIwMjUwOTAxLVdBMDAxNC5qcGciLAogICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsCiAgICAgICJ0eXBlIjogImltYWdlL2pwZWciCiAgICB9CiAgXQp9">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         * {
             margin: 0;
@@ -195,6 +195,13 @@
             align-items: center;
             z-index: 9999;
             transition: opacity 0.3s ease;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .terms-modal.hidden {
+            opacity: 0;
+            visibility: hidden;
         }
 
         .terms-content {
@@ -206,6 +213,12 @@
             max-height: 80vh;
             overflow-y: auto;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .terms-modal.hidden .terms-content {
+            transform: translateY(-20px);
         }
 
         .terms-content h2 {
@@ -1067,17 +1080,17 @@
             .hero h1 {
                 font-size: 2.8rem;
             }
-            
+
             .terms-actions {
                 flex-direction: row;
                 justify-content: center;
             }
-            
+
             .footer-content {
                 flex-direction: row;
                 flex-wrap: wrap;
             }
-            
+
             .footer-column {
                 flex: 1;
                 min-width: 45%;
@@ -1088,31 +1101,31 @@
             .hero {
                 padding: 160px 0 100px;
             }
-            
+
             .hero h1 {
                 font-size: 3.2rem;
             }
-            
+
             .about-content {
                 flex-direction: row;
             }
-            
+
             .about-text, .about-image {
                 flex: 1;
             }
-            
+
             .about-image {
                 height: 400px;
             }
-            
+
             .contact-content {
                 flex-direction: row;
             }
-            
+
             .contact-form, .contact-info {
                 flex: 1;
             }
-            
+
             .footer-column {
                 min-width: 22%;
             }
@@ -1122,15 +1135,15 @@
             .hero h1 {
                 font-size: 3.5rem;
             }
-            
+
             .section-title h2 {
                 font-size: 2.5rem;
             }
-            
+
             .nav-links {
                 gap: 30px;
             }
-            
+
             .portfolio-grid, .services-grid {
                 grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             }
@@ -1151,28 +1164,28 @@
                 transition: right 0.3s ease;
                 z-index: 999;
             }
-            
+
             .nav-links.active {
                 right: 0;
             }
-            
+
             .nav-links a {
                 color: white;
                 font-size: 1.2rem;
             }
-            
+
             .menu-btn {
                 display: block;
             }
-            
+
             .hero::before, .hero::after {
                 display: none;
             }
-            
+
             .portfolio-item, .service-item {
                 height: 220px;
             }
-            
+
             .install-app {
                 bottom: 80px;
                 left: 20px;
@@ -1183,41 +1196,41 @@
             .hero h1 {
                 font-size: 2.2rem;
             }
-            
+
             .hero p {
                 font-size: 1rem;
             }
-            
+
             .btn {
                 padding: 10px 22px;
                 font-size: 0.9rem;
             }
-            
+
             .section-title h2 {
                 font-size: 1.8rem;
             }
-            
+
             .logo-text {
                 font-size: 1.1rem;
             }
-            
+
             .logo-img {
                 width: 35px;
                 height: 35px;
             }
-            
+
             .portfolio-content, .service-item {
                 padding: 15px;
             }
-            
+
             .testimonial-item {
                 padding: 20px;
             }
-            
+
             .terms-content {
                 padding: 20px;
             }
-            
+
             .back-to-top {
                 bottom: 20px;
                 right: 20px;
@@ -1225,7 +1238,7 @@
                 height: 40px;
                 font-size: 1.1rem;
             }
-            
+
             .install-app {
                 bottom: 70px;
                 left: 15px;
@@ -1501,7 +1514,7 @@
                             <label for="message">Message</label>
                             <textarea id="message" placeholder="How can I help you?" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn">Send Message via WhatsApp</button>
                     </form>
                 </div>
                 <div class="contact-info">
@@ -1615,21 +1628,21 @@
         const termsModal = document.getElementById('termsModal');
         const acceptTerms = document.getElementById('acceptTerms');
         const declineTerms = document.getElementById('declineTerms');
-        
+
         // Check if user has already accepted terms
         if (!localStorage.getItem('termsAccepted')) {
-            termsModal.style.display = 'flex';
+            termsModal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         } else {
-            termsModal.style.display = 'none';
+            termsModal.classList.add('hidden');
         }
-        
+
         acceptTerms.addEventListener('click', () => {
             localStorage.setItem('termsAccepted', 'true');
-            termsModal.style.display = 'none';
+            termsModal.classList.add('hidden');
             document.body.style.overflow = 'auto';
         });
-        
+
         declineTerms.addEventListener('click', () => {
             alert('You must accept the Terms of Service to use this website.');
         });
@@ -1645,7 +1658,7 @@
         // Theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = themeToggle.querySelector('i');
-        
+
         // Check for saved theme preference or respect OS preference
         if (localStorage.getItem('theme') === 'dark' || 
             (window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'))) {
@@ -1653,10 +1666,10 @@
             themeIcon.classList.remove('fa-moon');
             themeIcon.classList.add('fa-sun');
         }
-        
+
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            
+
             if (document.body.classList.contains('dark-mode')) {
                 localStorage.setItem('theme', 'dark');
                 themeIcon.classList.remove('fa-moon');
@@ -1672,10 +1685,10 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 if(targetId === '#') return;
-                
+
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     window.scrollTo({
@@ -1689,11 +1702,11 @@
         // Mobile menu toggle
         const menuBtn = document.querySelector('.menu-btn');
         const navLinks = document.querySelector('.nav-links');
-        
+
         menuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             menuBtn.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars'></i>';
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
 
         // Close mobile menu when clicking on a link
@@ -1706,7 +1719,7 @@
 
         // Back to top button
         const backToTopButton = document.querySelector('.back-to-top');
-        
+
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.add('visible');
@@ -1714,7 +1727,7 @@
                 backToTopButton.classList.remove('visible');
             }
         });
-        
+
         backToTopButton.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
@@ -1722,35 +1735,24 @@
             });
         });
 
-        // Form submission
+        // Form submission to WhatsApp
         const contactForm = document.getElementById('contactForm');
-        
+
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Format the message for WhatsApp
+            const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
             
-            // Store form data in localStorage for offline handling
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value,
-                timestamp: new Date().toISOString()
-            };
+            // Open WhatsApp with the pre-filled message
+            window.open(`https://wa.me/2348061947053?text=${whatsappMessage}`, '_blank');
             
-            // Check if online
-            if (navigator.onLine) {
-                // Here you would normally send the form data to a server
-                // For demonstration, we'll just show an alert
-                alert('Thank you for your message! I will get back to you soon.');
-                contactForm.reset();
-            } else {
-                // Save for later submission
-                let offlineMessages = JSON.parse(localStorage.getItem('offlineMessages') || '[]');
-                offlineMessages.push(formData);
-                localStorage.setItem('offlineMessages', JSON.stringify(offlineMessages));
-                
-                alert('Your message has been saved and will be sent when you are back online.');
-                contactForm.reset();
-            }
+            // Reset the form
+            contactForm.reset();
         });
 
         // Add animation on scroll
@@ -1777,7 +1779,7 @@
         const pwaInstallBtn = document.getElementById('pwaInstall');
         const pwaDismissBtn = document.getElementById('pwaDismiss');
         const installAppButton = document.getElementById('installAppButton');
-        
+
         window.addEventListener('beforeinstallprompt', (e) => {
             // Prevent the mini-infobar from appearing on mobile
             e.preventDefault();
@@ -1785,7 +1787,7 @@
             deferredPrompt = e;
             // Show the install button
             installAppButton.style.display = 'flex';
-            
+
             // Show the install prompt after 5 seconds
             setTimeout(() => {
                 if (!localStorage.getItem('installPromptDismissed')) {
@@ -1793,11 +1795,11 @@
                 }
             }, 5000);
         });
-        
+
         // Install button click
         installAppButton.addEventListener('click', async () => {
             if (!deferredPrompt) return;
-            
+
             // Show the install prompt
             deferredPrompt.prompt();
             // Wait for the user to respond to the prompt
@@ -1808,10 +1810,10 @@
             installAppButton.style.display = 'none';
             pwaInstallPrompt.classList.remove('visible');
         });
-        
+
         pwaInstallBtn.addEventListener('click', async () => {
             if (!deferredPrompt) return;
-            
+
             // Show the install prompt
             deferredPrompt.prompt();
             // Wait for the user to respond to the prompt
@@ -1822,38 +1824,22 @@
             installAppButton.style.display = 'none';
             pwaInstallPrompt.classList.remove('visible');
         });
-        
+
         pwaDismissBtn.addEventListener('click', () => {
             pwaInstallPrompt.classList.remove('visible');
             localStorage.setItem('installPromptDismissed', 'true');
         });
-        
+
         // Online/Offline detection
         const offlineStatus = document.getElementById('offlineStatus');
-        
+
         window.addEventListener('online', () => {
             offlineStatus.classList.remove('visible');
-            // Try to send any offline messages
-            sendOfflineMessages();
         });
-        
+
         window.addEventListener('offline', () => {
             offlineStatus.classList.add('visible');
         });
-        
-        // Function to send offline messages when back online
-        function sendOfflineMessages() {
-            const offlineMessages = JSON.parse(localStorage.getItem('offlineMessages') || '[]');
-            
-            if (offlineMessages.length > 0) {
-                // Here you would send all stored messages to your server
-                // For demonstration, we'll just show an alert
-                alert(`Sending ${offlineMessages.length} saved messages.`);
-                
-                // Clear the stored messages
-                localStorage.removeItem('offlineMessages');
-            }
-        }
     </script>
 </body>
 </html>
