@@ -1,9 +1,20 @@
 {
   "version": 2,
-  "name": "abumuha-portfolio",
   "builds": [
     {
-      "src": "index.html",
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.jpg",
       "use": "@vercel/static"
     }
   ],
@@ -32,13 +43,41 @@
       ]
     },
     {
-      "source": "^/(.*\\.css|.*\\.js|.*\\.jpg|.*\\.png|.*\\.svg|.*\\.ico)",
+      "source": "/(.*\\.(jpg|jpeg|png|gif|svg|ico|webp))",
       "headers": [
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
         }
       ]
+    },
+    {
+      "source": "/(.*\\.(css|js))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/sw.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        },
+        {
+          "key": "Service-Worker-Allowed",
+          "value": "/"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
