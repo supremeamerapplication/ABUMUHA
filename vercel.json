@@ -16,9 +16,20 @@
     {
       "src": "*.jpg",
       "use": "@vercel/static"
+    },
+    {
+      "src": "*.json",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/sw.js",
+      "headers": {
+        "Cache-Control": "no-cache",
+        "Service-Worker-Allowed": "/"
+      }
+    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
@@ -59,25 +70,6 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
-    },
-    {
-      "source": "/sw.js",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache"
-        },
-        {
-          "key": "Service-Worker-Allowed",
-          "value": "/"
-        }
-      ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
     }
   ]
 }
