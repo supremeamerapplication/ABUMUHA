@@ -1,0 +1,27 @@
+{
+  "name": "ABUMUHA Design Portfolio",
+  "short_name": "ABUMUHA",
+  "description": "Graphic Design Portfolio of ABUMUHA - Transform ideas into visual masterpieces",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#6C63FF",
+  "theme_color": "#6C63FF",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "IMG-20250901-WA0014.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "IMG-20250901-WA0014.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["design", "art", "portfolio"],
+  "lang": "en",
+  "dir": "ltr"
+}
