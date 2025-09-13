@@ -3,13 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supreme Motive - Daily Inspiration & Motivation</title>
+    <meta name="description" content="ABUMUHA - Professional Graphic Designer Portfolio. Transform ideas into visual masterpieces.">
+    <meta name="theme-color" content="#6C63FF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="ABUMUHA ">
+    <meta name="msapplication-TileColor" content="#6C63FF">
+
+    <title>ABUMUHA | Graphic Designer Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="IMG-20250901-WA0014.jpg">
+    <link rel="apple-touch-icon" href="IMG-20250901-WA0014.jpg">
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkFCVU1VSEEgRGVzaWduIFBvcnRmb2xpbyIsCiAgInNob3J0X25hbWUiOiAiQUJVTVVIQSIsCiAgImRlc2NyaXB0aW9uIjogIkdyYXBoaWMgRGVzaWduIFBvcnRmb2xpbyBvZiBBQlVNVUhBIiwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiM2QzYzRkYiLAogICJ0aGVtZV9jb2xvciI6ICIjNkM2M0ZGIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiSU1HLTIwMjUwOTAxLVdBMDAxNC5qcGciLAogICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsCiAgICAgICJ0eXBlIjogImltYWdlL2pwZWciCiAgICB9CiAgXQp9">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#4a154b">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -17,1151 +30,1463 @@
         }
 
         :root {
-            --primary: #4a154b;
-            --secondary: #f86464;
-            --accent: #8a2be2;
-            --light: #f9f9f9;
-            --dark: #333;
-            --gray: #777;
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --accent: #36D1DC;
+            --light: #F8F9FA;
+            --dark: #2D2D2D;
+            --text-color: #2D2D2D;
+            --body-bg: #FFFFFF;
+            --card-bg: #FFFFFF;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --footer-bg: #2D2D2D;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
-            transition: var(--transition);
-            overflow-x: hidden;
+            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+            --radius: 12px;
         }
 
         body.dark-mode {
-            --light: #222;
-            --dark: #f9f9f9;
-            --gray: #aaa;
-            background-color: var(--light);
-            color: var(--dark);
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --accent: #36D1DC;
+            --light: #1A1A1A;
+            --dark: #F8F9FA;
+            --text-color: #F8F9FA;
+            --body-bg: #121212;
+            --card-bg: #1E1E1E;
+            --header-bg: rgba(30, 30, 30, 0.95);
+            --footer-bg: #0D0D0D;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        section {
-            padding: 80px 0;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--body-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: var(--transition);
         }
 
         h1, h2, h3, h4 {
-            font-weight: 700;
-            margin-bottom: 20px;
             font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--text-color);
         }
 
-        p {
-            margin-bottom: 15px;
-            font-family: 'Merriweather', serif;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        a {
-            text-decoration: none;
-            color: var(--primary);
-            transition: var(--transition);
+        /* PWA Install Prompt */
+        .pwa-install-prompt {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            z-index: 10000;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 320px;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
         }
 
-        a:hover {
-            color: var(--secondary);
+        .pwa-install-prompt.visible {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--primary);
+        .pwa-install-prompt .prompt-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pwa-install-prompt .app-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
+            font-weight: bold;
+        }
+
+        .pwa-install-prompt p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .pwa-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .pwa-buttons button {
+            flex: 1;
+            padding: 10px 15px;
+            border-radius: 6px;
             border: none;
-            border-radius: 30px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 500;
             transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 14px;
         }
 
-        .btn:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            color: white;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
+        .pwa-install {
             background: var(--primary);
             color: white;
         }
 
-        .section-title {
+        .pwa-dismiss {
+            background: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--text-color) !important;
+        }
+
+        /* Offline Status */
+        .offline-status {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 12px;
             text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
             background: var(--secondary);
-            margin: 15px auto;
-            border-radius: 2px;
+            color: white;
+            z-index: 10001;
+            display: none;
+            font-weight: 500;
         }
 
-        /* Header */
-        header {
+        .offline-status.visible {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        /* Terms Modal */
+        .terms-modal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .terms-modal.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .terms-content {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius);
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .terms-modal.hidden .terms-content {
+            transform: translateY(-20px);
+        }
+
+        .terms-content h2 {
+            margin-bottom: 15px;
+            text-align: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .terms-text {
+            margin-bottom: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .terms-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--body-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9998;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(108, 99, 255, 0.2);
+            border-radius: 50%;
+            border-top: 4px solid var(--primary);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--header-bg);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
             transition: var(--transition);
-        }
-
-        body.dark-mode header {
-            background: rgba(34, 34, 34, 0.95);
-        }
-
-        header.scrolled {
-            padding: 10px 0;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
 
-        .logo {
+        .logo-container {
             display: flex;
             align-items: center;
-            font-weight: 700;
-            font-size: 24px;
-            color: var(--primary);
-        }
-
-        body.dark-mode .logo {
-            color: var(--dark);
+            gap: 10px;
+            cursor: pointer;
         }
 
         .logo-img {
             width: 40px;
             height: 40px;
-            margin-right: 10px;
-            object-fit: contain;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 3px 8px rgba(108, 99, 255, 0.3);
+            transition: var(--transition);
+        }
+
+        .logo-container:hover .logo-img {
+            transform: rotate(15deg);
+            box-shadow: 0 5px 12px rgba(108, 99, 255, 0.4);
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
         }
 
         .nav-links {
             display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
+            gap: 25px;
+            align-items: center;
         }
 
         .nav-links a {
-            color: var(--dark);
-            font-weight: 600;
-            font-size: 16px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
             transition: var(--transition);
-        }
-
-        body.dark-mode .nav-links a {
-            color: var(--dark);
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-
-        .nav-controls {
-            display: flex;
-            align-items: center;
-        }
-
-        .theme-toggle, .music-toggle, .quote-type-toggle {
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            margin-left: 15px;
-            color: var(--dark);
-            transition: var(--transition);
-        }
-
-        body.dark-mode .theme-toggle, 
-        body.dark-mode .music-toggle,
-        body.dark-mode .quote-type-toggle {
-            color: var(--dark);
-        }
-
-        .theme-toggle:hover, .music-toggle:hover, .quote-type-toggle:hover {
-            color: var(--secondary);
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            margin-left: 20px;
-        }
-
-        /* Mobile Navigation */
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 70%;
-            height: 100vh;
-            background: var(--primary);
-            z-index: 2000;
-            padding: 80px 30px 30px;
-            transition: right 0.3s ease;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .mobile-nav.active {
-            right: 0;
-        }
-
-        .mobile-nav-links {
-            list-style: none;
-        }
-
-        .mobile-nav-links li {
-            margin-bottom: 20px;
-        }
-
-        .mobile-nav-links a {
-            color: white;
-            font-size: 18px;
-            font-weight: 600;
-            display: block;
-            padding: 10px 0;
-        }
-
-        .mobile-nav-controls {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .close-mobile-nav {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 160px 0 100px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(74, 21, 75, 0.9) 0%, rgba(138, 43, 226, 0.8) 100%);
-            color: white;
             position: relative;
-            overflow: hidden;
+            padding: 5px 0;
+            font-size: 0.95rem;
         }
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Quote Section */
-        .quote-container {
-            background: white;
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin: 0 auto;
-            max-width: 800px;
-            transition: var(--transition);
-        }
-
-        body.dark-mode .quote-container {
-            background: #333;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .quote-text {
-            font-size: 24px;
-            font-style: italic;
-            margin-bottom: 20px;
-            color: var(--primary);
-            min-height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        body.dark-mode .quote-text {
-            color: var(--secondary);
-        }
-
-        .quote-author {
-            font-weight: 600;
-            color: var(--gray);
-            margin-bottom: 30px;
-        }
-
-        .quote-controls {
-            margin-top: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .category-filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-
-        .category-btn {
-            padding: 8px 20px;
-            background: transparent;
-            border: 2px solid var(--primary);
-            border-radius: 30px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 600;
-        }
-
-        .category-btn.active, .category-btn:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Image Quote Styles */
-        .image-quote-container {
-            display: none;
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .image-quote {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .image-quote-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-            padding: 30px 20px 20px;
-            color: white;
-            text-align: center;
-        }
-
-        .image-quote-text {
-            font-size: 20px;
-            font-style: italic;
-            margin-bottom: 10px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-        }
-
-        .image-quote-author {
-            font-weight: 600;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-        }
-
-        /* Categories Section */
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .category-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            text-align: center;
-            cursor: pointer;
-        }
-
-        body.dark-mode .category-card {
-            background: #333;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .category-icon {
-            font-size: 40px;
-            padding: 30px 0;
-            color: var(--primary);
-        }
-
-        .category-content {
-            padding: 20px;
-        }
-
-        .category-content h3 {
-            margin-bottom: 10px;
-        }
-
-        /* Quote Search */
-        .quote-search {
-            margin: 30px auto;
-            max-width: 500px;
-            position: relative;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 15px 20px;
-            border: 2px solid #ddd;
-            border-radius: 30px;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        body.dark-mode .search-input {
-            background: #444;
-            border-color: #555;
-            color: white;
-        }
-
-        .search-input:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 10px rgba(74, 21, 75, 0.2);
-        }
-
-        .search-btn {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: var(--primary);
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .contact-info {
-            margin-bottom: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            margin-right: 15px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Merriweather', serif;
-            transition: var(--transition);
-        }
-
-        body.dark-mode .contact-form input,
-        body.dark-mode .contact-form textarea {
-            background: #444;
-            border-color: #555;
-            color: white;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: var(--primary);
-            outline: none;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 60px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        .footer-about p {
-            margin-bottom: 20px;
-            color: #ddd;
-        }
-
-        .footer-links h3,
-        .footer-newsletter h3 {
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-            color: white;
-        }
-
-        .footer-links h3:after,
-        .footer-newsletter h3:after {
+        .nav-links a::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--secondary);
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #ddd;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
             transition: var(--transition);
         }
 
-        .footer-links a:hover {
-            color: var(--secondary);
+        .nav-links a:hover {
+            color: var(--primary);
         }
 
-        .footer-newsletter form {
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+            z-index: 1001;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.08) 0%, rgba(54, 209, 220, 0.08) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.15) 0%, rgba(54, 209, 220, 0.15) 100%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: -60px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(54, 209, 220, 0.1) 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            transition: var(--transition);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--text-color);
+            transition: var(--transition);
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(108, 99, 255, 0.35);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-size: 0.95rem;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(108, 99, 255, 0.5);
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 80px 0;
+            background-color: var(--body-bg);
+            transition: var(--transition);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .portfolio-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .portfolio-item:nth-child(1) {
+            background-image: url('IMG-20250904-WA0040.jpg');
+        }
+
+        .portfolio-item:nth-child(2) {
+            background-image: url('IMG-20250904-WA0006.jpg');
+        }
+
+        .portfolio-item:nth-child(3) {
+            background-image: url('IMG-20250904-WA0016.jpg');
+        }
+
+        .portfolio-item:nth-child(4) {
+            background-image: url('IMG-20250904-WA0017.jpg');
+        }
+
+        .portfolio-item:nth-child(5) {
+            background-image: url('IMG-20250904-WA0033.jpg');
+        }
+
+        .portfolio-item:nth-child(6) {
+            background-image: url('IMG-20250904-WA0027.jpg');
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(100%);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .dark-mode .portfolio-content {
+            background: rgba(30, 30, 30, 0.95);
+        }
+
+        .portfolio-item:hover .portfolio-content {
+            transform: translateY(0);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.05) 0%, rgba(54, 209, 220, 0.05) 100%);
+            transition: var(--transition);
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            width: 100%;
+        }
+
+        .about-text h2 {
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .about-image {
+            width: 100%;
+            height: 350px;
+            background: url('https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+            transition: var(--transition);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-item {
+            padding: 25px 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .dark-mode .service-item {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .service-item:hover .service-icon {
+            transform: scale(1.1);
+        }
+
+        .service-item h3 {
+            margin-bottom: 12px;
+            color: var(--text-color);
+            font-size: 1.2rem;
+        }
+
+        .service-item p {
+            color: var(--text-color);
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.05) 0%, rgba(54, 209, 220, 0.05) 100%);
+            transition: var(--transition);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .testimonial-item {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .testimonial-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+        }
+
+        .author-details h4 {
+            margin-bottom: 5px;
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        .author-details p {
+            color: var(--text-color);
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--body-bg);
+            transition: var(--transition);
+        }
+
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .contact-form {
+            width: 100%;
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .form-group {
             margin-bottom: 20px;
         }
 
-        .footer-newsletter input {
-            flex: 1;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 4px 0 0 4px;
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+            background-color: var(--card-bg);
+            color: var(--text-color);
+        }
+
+        .dark-mode .form-group input,
+        .dark-mode .form-group textarea {
+            border: 1px solid #444;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
             outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
         }
 
-        .footer-newsletter button {
-            padding: 0 20px;
-            background: var(--secondary);
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .contact-info {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 25px;
+            border-radius: var(--radius);
             color: white;
-            border: none;
-            border-radius: 0 4px 4px 0;
-            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .social-icons {
+        .contact-info h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .info-icon {
+            margin-right: 12px;
+            font-size: 1.2rem;
+            color: white;
+            width: 25px;
+        }
+
+        .social-contact {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-contact a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-contact a:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--footer-bg);
+            color: white;
+            padding: 50px 0 20px;
+            transition: var(--transition);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            width: 100%;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .footer-column p {
+            margin-bottom: 12px;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 8px;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
             display: flex;
             gap: 15px;
+            margin-top: 15px;
         }
 
-        .social-icons a {
-            width: 40px;
-            height: 40px;
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .copyright a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .copyright a:hover {
+            text-decoration: underline;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: var(--transition);
-        }
-
-        .social-icons a:hover {
-            background: var(--secondary);
-            transform: translateY(-5px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #ddd;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 10px;
-            padding: 40px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            animation: modalFadeIn 0.3s ease;
-        }
-
-        body.dark-mode .modal-content {
-            background: #333;
-        }
-
-        @keyframes modalFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--gray);
-            transition: var(--transition);
-        }
-
-        .close-modal:hover {
-            color: var(--secondary);
-        }
-
-        .modal-title {
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        body.dark-mode .modal-title {
-            color: var(--secondary);
-        }
-
-        .coffee-options {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .coffee-option {
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
             cursor: pointer;
             transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
         }
 
-        .coffee-option:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
         }
 
-        .coffee-option.selected {
-            border-color: var(--primary);
-            background: rgba(74, 21, 75, 0.1);
-        }
-
-        body.dark-mode .coffee-option.selected {
-            background: rgba(74, 21, 75, 0.3);
-        }
-
-        /* Install Button */
-        .install-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 12px 25px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            display: none;
-            align-items: center;
-            gap: 8px;
-            transition: var(--transition);
-        }
-
-        .install-btn:hover {
-            background: var(--secondary);
+        .back-to-top:hover {
             transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(108, 99, 255, 0.5);
         }
 
-        /* Terms Modal */
-        .terms-modal {
-            display: flex;
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        /* Enhanced Design Elements */
+        .floating-shapes {
+            position: absolute;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 3000;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            background: var(--primary);
+        }
+
+        .shape-1 {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            top: 20%;
+            left: 10%;
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            top: 60%;
+            right: 10%;
+            animation: float 18s ease-in-out infinite;
+        }
+
+        .shape-3 {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            bottom: 20%;
+            left: 20%;
+            animation: float 12s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        .gradient-border {
+            position: relative;
+            border-radius: var(--radius);
+            padding: 2px;
+            background: var(--gradient);
+        }
+
+        .gradient-border > div {
+            background: var(--card-bg);
+            border-radius: calc(var(--radius) - 2px);
+            padding: 20px;
+        }
+
+        /* Install App Button */
+        .install-app {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .terms-content {
-            background: white;
-            border-radius: 10px;
-            padding: 40px;
-            max-width: 600px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        body.dark-mode .terms-content {
-            background: #333;
-            color: white;
-        }
-
-        .terms-content h2 {
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        body.dark-mode .terms-content h2 {
-            color: var(--secondary);
-        }
-
-        .terms-content p {
-            margin-bottom: 15px;
-        }
-
-        .terms-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
-
-        /* Music Player */
-        .music-player {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50px;
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            z-index: 900;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .music-info {
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .music-controls {
-            display: flex;
-            gap: 10px;
-        }
-
-        .music-controls button {
-            background: none;
-            border: none;
-            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            font-size: 16px;
+            transition: var(--transition);
+            z-index: 998;
         }
 
-        /* Responsive */
-        @media (max-width: 992px) {
-            .nav-links {
-                display: none;
+        .install-app:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (min-width: 576px) {
+            .hero h1 {
+                font-size: 2.8rem;
             }
 
-            .menu-toggle {
-                display: block;
+            .terms-actions {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .footer-content {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .footer-column {
+                flex: 1;
+                min-width: 45%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                padding: 160px 0 100px;
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3.2rem;
+            }
+
+            .about-content {
+                flex-direction: row;
+            }
+
+            .about-text, .about-image {
+                flex: 1;
+            }
+
+            .about-image {
+                height: 400px;
+            }
+
+            .contact-content {
+                flex-direction: row;
+            }
+
+            .contact-form, .contact-info {
+                flex: 1;
+            }
+
+            .footer-column {
+                min-width: 22%;
             }
         }
 
-        @media (max-width: 768px) {
-            section {
-                padding: 60px 0;
+        @media (min-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
             }
 
-            .hero {
-                padding: 140px 0 80px;
+            .section-title h2 {
+                font-size: 2.5rem;
             }
 
-            .contact-container {
-                grid-template-columns: 1fr;
+            .nav-links {
+                gap: 30px;
             }
 
-            .coffee-options {
-                grid-template-columns: 1fr;
+            .portfolio-grid, .services-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             }
+        }
 
-            .quote-controls {
+        @media (max-width: 767px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--secondary);
                 flex-direction: column;
+                justify-content: center;
                 align-items: center;
-            }
-            
-            .quote-controls .btn {
-                width: 100%;
-                max-width: 300px;
-                margin-bottom: 10px;
+                gap: 30px;
+                transition: right 0.3s ease;
+                z-index: 999;
             }
 
-            .music-player {
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                color: white;
+                font-size: 1.2rem;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero::before, .hero::after {
+                display: none;
+            }
+
+            .portfolio-item, .service-item {
+                height: 220px;
+            }
+
+            .install-app {
                 bottom: 80px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 90%;
-                max-width: 300px;
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
             }
 
-            .image-quote-text {
-                font-size: 18px;
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 10px 22px;
+                font-size: 0.9rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .logo-text {
+                font-size: 1.1rem;
+            }
+
+            .logo-img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .portfolio-content, .service-item {
+                padding: 15px;
+            }
+
+            .testimonial-item {
+                padding: 20px;
+            }
+
+            .terms-content {
+                padding: 20px;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+
+            .install-app {
+                bottom: 70px;
+                left: 15px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Terms and Privacy Modal -->
-    <div class="modal terms-modal" id="termsModal">
+    <!-- Terms Modal -->
+    <div class="terms-modal" id="termsModal">
         <div class="terms-content">
-            <h2>Terms of Service & Privacy Policy</h2>
-            <p>By using Supreme Motive, you agree to our Terms of Service and Privacy Policy.</p>
-            <h3>Terms of Service</h3>
-            <p>1. You must be at least 13 years old to use this app.</p>
-            <p>2. The quotes provided are for inspirational purposes only.</p>
-            <p>3. We reserve the right to modify these terms at any time.</p>
-            
-            <h3>Privacy Policy</h3>
-            <p>1. We collect minimal data to improve your experience.</p>
-            <p>2. Your data is never sold to third parties.</p>
-            <p>3. We use cookies to remember your preferences.</p>
-            
-            <div class="terms-buttons">
-                <button class="btn btn-outline" id="declineTerms">Decline</button>
+            <h2>Terms of Service</h2>
+            <div class="terms-text">
+                <p>Welcome to ABUMUHA Design Portfolio. By accessing this website, you agree to be bound by these <a href="privacy.html">privacy policy</a> and 
+                    <a href="terms.html">Terms of Service.</a></p>
+            </div>
+            <div class="terms-actions">
                 <button class="btn" id="acceptTerms">Accept</button>
+                <button class="btn" id="declineTerms" style="background: #888;">Decline</button>
             </div>
         </div>
     </div>
 
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav" id="mobileNav">
-        <button class="close-mobile-nav" id="closeMobileNav">
-            <i class="fas fa-times"></i>
-        </button>
-        <ul class="mobile-nav-links">
-            <li><a href="#home" class="mobile-nav-link">Home</a></li>
-            <li><a href="#categories" class="mobile-nav-link">Categories</a></li>
-            <li><a href="#quote" class="mobile-nav-link">Daily Quote</a></li>
-            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
-        </ul>
-        <div class="mobile-nav-controls">
-            <button class="theme-toggle" id="mobileThemeToggle" title="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button class="quote-type-toggle" id="mobileQuoteTypeToggle" title="Toggle quote type">
-                <i class="fas fa-image"></i>
-            </button>
-            <button class="music-toggle" id="mobileMusicToggle" title="Toggle music">
-                <i class="fas fa-music"></i>
-            </button>
+    <!-- PWA Install Prompt -->
+    <div class="pwa-install-prompt" id="pwaInstallPrompt">
+        <div class="prompt-header">
+            <div class="app-icon">A</div>
+            <h3>Install ABUMUHA App</h3>
+        </div>
+        <p>Install this application on your home screen for quick and easy access when you're on the go.</p>
+        <div class="pwa-buttons">
+            <button class="pwa-install" id="pwaInstall">Install</button>
+            <button class="pwa-dismiss" id="pwaDismiss">Not Now</button>
         </div>
     </div>
 
-    <!-- Header -->
-    <header id="header">
+    <!-- Offline Status Indicator -->
+    <div class="offline-status" id="offlineStatus">
+        You are currently offline. Some features may be limited.
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Install App Button -->
+    <div class="install-app" id="installAppButton">
+        <i class="fas fa-download"></i>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
         <div class="container">
             <nav>
-                <div class="logo">
-                    <img src="https://placehold.co/40x40/4a154b/FFFFFF?text=SM" alt="Supreme Motive Logo" class="logo-img">
-                    <span>Supreme Motive</span>
+                <div class="logo-container">
+                    <img src="IMG-20250901-WA0014.jpg" alt="ABMUHA Logo" class="logo-img">
+                    <div class="logo-text">ABMUHA</div>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#categories">Categories</a></li>
-                    <li><a href="#quote">Daily Quote</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="nav-controls">
-                    <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                    <button class="theme-toggle" id="theme-toggle">
                         <i class="fas fa-moon"></i>
                     </button>
-                    <button class="quote-type-toggle" id="quoteTypeToggle" title="Toggle quote type">
-                        <i class="fas fa-image"></i>
-                    </button>
-                    <button class="music-toggle" id="musicToggle" title="Toggle music">
-                        <i class="fas fa-music"></i>
-                    </button>
-                    <div class="menu-toggle" id="menuToggle">
-                        <i class="fas fa-bars"></i>
-                    </div>
                 </div>
+                <button class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
         <div class="container">
-            <div class="hero-content">
-                <h1>Ignite Your Inner Drive</h1>
-                <p>Daily inspiration and motivation to help you achieve your goals and live your best life.</p>
-                <a href="#quote" class="btn">Get Inspired</a>
+            <h1>Transform Ideas Into <span style="display: block;">Visual Masterpieces</span></h1>
+            <p>ABMUHA is a graphic designer dedicated to creating stunning visuals that tell your story and elevate your brand to new heights. With expertise in Adobe Creative Suite, Photoshop, Illustrator, InDesign, and a keen eye for detail, I craft visuals that convey messages with clarity and impact.</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Creating designs that speak to your audience</h2>
+                    <p>With over 8 years of experience in the design industry, I specialize in creating compelling visual identities that help brands stand out in competitive markets.</p>
+                    <p>My approach combines strategic thinking with artistic expression to deliver designs that are not only visually appealing but also effectively communicate your brand's message.</p>
+                    <p>I work closely with clients to understand their vision and transform it into impactful designs that resonate with their target audience.</p>
+                    <a href="#contact" class="btn">Let's Work Together</a>
+                </div>
+                <div class="about-image"></div>
             </div>
         </div>
     </section>
 
-    <!-- Quote Section -->
-    <section id="quote">
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
         <div class="container">
-            <h2 class="section-title">Daily Inspiration</h2>
-            
-            <div class="quote-search">
-                <input type="text" class="search-input" id="quoteSearch" placeholder="Search quotes...">
-                <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+            <div class="section-title">
+                <h2>Featured Work</h2>
             </div>
-            
-            <div class="category-filters">
-                <button class="category-btn active" data-category="all">All Quotes</button>
-                <button class="category-btn" data-category="motivation">Motivation</button>
-                <button class="category-btn" data-category="success">Success</button>
-                <button class="category-btn" data-category="life">Life</button>
-                <button class="category-btn" data-category="wisdom">Wisdom</button>
-                <button class="category-btn" data-category="love">Love</button>
-                <button class="category-btn" data-category="leadership">Leadership</button>
-                <button class="category-btn" data-category="positive">Positive</button>
-            </div>
-            
-            <div class="quote-container" id="textQuoteContainer">
-                <p class="quote-text" id="quoteText">"The only way to do great work is to love what you do."</p>
-                <p class="quote-author" id="quoteAuthor">- Steve Jobs</p>
-                <div class="quote-controls">
-                    <button class="btn" id="newQuote">New Quote</button>
-                    <button class="btn btn-outline" id="shareQuote">Share Quote</button>
-                    <button class="btn btn-outline" id="favoriteQuote">Add to Favorites</button>
-                    <button class="btn btn-outline" id="copyQuote">Copy Quote</button>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <h3>Brand Identity</h3>
+                        <p>Logos, branding, typography, color theory, and composition</p>
+                    </div>
                 </div>
-                <div style="margin-top: 20px;">
-                    <p>Quote <span id="quoteCounter">1</span> of <span id="totalQuotes">10000+</span></p>
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <h3>Packaging Design</h3>
+                        <p>Product packaging for organic skincare line</p>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="image-quote-container" id="imageQuoteContainer">
-                <img src="" alt="Inspirational Quote" class="image-quote" id="imageQuote">
-                <div class="image-quote-overlay">
-                    <p class="image-quote-text" id="imageQuoteText">"The only way to do great work is to love what you do."</p>
-                    <p class="image-quote-author" id="imageQuoteAuthor">- Steve Jobs</p>
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <h3>Web Design</h3>
+                        <p>UI/UX, web graphics, social media assets, and email templates</p>
+                    </div>
                 </div>
-                <div class="quote-controls" style="background: white; padding: 20px;">
-                    <button class="btn" id="newImageQuote">New Image Quote</button>
-                    <button class="btn btn-outline" id="shareImageQuote">Share Quote</button>
-                    <button class="btn btn-outline" id="favoriteImageQuote">Add to Favorites</button>
-                    <button class="btn btn-outline" id="downloadImageQuote">Download Image</button>
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <h3>Illustration</h3>
+                        <p>Custom illustrations for book publication</p>
+                    </div>
                 </div>
-                <div style="margin-top: 20px; padding: 10px; background: white;">
-                    <p>Image Quote <span id="imageQuoteCounter">1</span> of <span id="totalImageQuotes">300+</span></p>
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <h3>Marketing Materials</h3>
+                        <p>Brochures, posters, flyers, business cards, and more</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <h3>Creative Design</h3>
+                        <p>Creating and maintaining consistent brand identities</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section id="categories">
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Categories</h2>
-            <div class="categories-grid">
-                <div class="category-card" data-category="motivation">
-                    <div class="category-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
-                    <div class="category-content">
-                        <h3>Motivation</h3>
-                        <p>Get inspired to take action and pursue your dreams</p>
-                    </div>
-                </div>
-                <div class="category-card" data-category="success">
-                    <div class="category-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="category-content">
-                        <h3>Success</h3>
-                        <p>Quotes about achieving goals and overcoming obstacles</p>
+            <div class="section-title">
+                <h2>Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="gradient-border">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Brand Identity</h3>
+                        <p>Logo design, color palettes, typography, and brand guidelines to create a cohesive visual identity.</p>
                     </div>
                 </div>
-                <div class="category-card" data-category="life">
-                    <div class="category-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <div class="category-content">
-                        <h3>Life</h3>
-                        <p>Wisdom for living a fulfilling and meaningful life</p>
-                    </div>
-                </div>
-                <div class="category-card" data-category="wisdom">
-                    <div class="category-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <div class="category-content">
-                        <h3>Wisdom</h3>
-                        <p>Insights from great thinkers and philosophers</p>
+                <div class="gradient-border">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p>User-centered website and application designs that provide seamless digital experiences.</p>
                     </div>
                 </div>
-                <div class="category-card" data-category="love">
-                    <div class="category-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <div class="category-content">
-                        <h3>Love</h3>
-                        <p>Quotes about relationships, self-love, and compassion</p>
-                    </div>
-                </div>
-                <div class="category-card" data-category="leadership">
-                    <div class="category-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <div class="category-content">
-                        <h3>Leadership</h3>
-                        <p>Inspiration for leading yourself and others</p>
+                <div class="gradient-border">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-box-open"></i>
+                        </div>
+                        <h3>Packaging Design</h3>
+                        <p>Eye-catching packaging solutions that attract attention and communicate product value.</p>
                     </div>
                 </div>
-                <div class="category-card" data-category="positive">
-                    <div class="category-icon">
-                        <i class="fas fa-sun"></i>
-                    </div>
-                    <div class="category-content">
-                        <h3>Positive Thinking</h3>
-                        <p>Quotes to cultivate optimism and positivity</p>
+                <div class="gradient-border">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <h3>Illustration</h3>
+                        <p>Custom illustrations that tell your brand's story and connect with your audience.</p>
                     </div>
                 </div>
-                <div class="category-card" data-category="business">
-                    <div class="category-icon">
-                        <i class="fas fa-chart-line"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <div class="testimonial-text">
+                        "ABMUHA transformed our brand identity completely. The new logo and visual system perfectly capture our company's vision and values."
                     </div>
-                    <div class="category-content">
-                        <h3>Business</h3>
-                        <p>Inspiration for entrepreneurs and professionals</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-details">
+                            <h4>Sarah Johnson</h4>
+                            <p>CEO, TechVision</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-text">
+                        "The packaging design created by ABMUHA helped us stand out in a crowded market. Our sales increased by 35% after the redesign."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-details">
+                            <h4>Michael Chen</h4>
+                            <p>Founder, OrganiCare</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-text">
+                        "Working with ABMUHA was a game-changer for our online presence. Their UI/UX design significantly improved our conversion rates."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-details">
+                            <h4>Emma Rodriguez</h4>
+                            <p>Marketing Director, StyleShop</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1169,53 +1494,62 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p>Have questions or feedback? We'd love to hear from you!</p>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h4>Location</h4>
-                            <p>123 Inspiration St, Motivation City</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>suprememotive@gmail.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                    <div>
-                            <h4>Phone</h4>
-                            <p>+2347031924052</p>
-                        </div>
-                    </div>
-                </div>
-                
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-content">
                 <div class="contact-form">
                     <form id="contactForm">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="text" placeholder="Subject" required>
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                        <button type="submit" class="btn">Send Message</button>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="How can I help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message via WhatsApp</button>
                     </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <p>abubakarmuhammedsani51@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <p>+234 806 194 7053</p>
+                        <p>+254 805 044 0743</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <p>Creative Design Studio, Nigeria</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <p>Mon-Fri: 9AM - 6PM</p>
+                    </div>
+                    <div class="social-contact">
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://t.me" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://wa.me/2348061947053" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:abubakarmuhammedsani51@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1225,703 +1559,226 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <img src="https://placehold.co/40x40/FFFFFF/4a154b?text=SM" alt="Supreme Motive Logo" class="logo-img">
-                        <span>Supreme Motive</span>
+                <div class="footer-column">
+                    <div class="logo-container">
+                        <img src="IMG-20250901-WA0014.jpg" alt="ABMUHA Logo" class="logo-img">
+                        <div class="logo-text">ABMUHA</div>
                     </div>
-                    <p>Your daily dose of motivation and inspiration to help you achieve your dreams and live a fulfilling life.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    <p>Transforming ideas into visual masterpieces that elevate brands and captivate audiences.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#categories">Categories</a></li>
-                        <li><a href="#quote">Daily Quote</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
                 </div>
-                
-                <div class="footer-newsletter">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to get daily motivation in your inbox</p>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="#">Brand Identity</a>
+                    <a href="#">UI/UX Design</a>
+                    <a href="#">Packaging Design</a>
+                    <a href="#">Illustration</a>
+                    <a href="#">Marketing Materials</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter for design tips and exclusive offers.</p>
                     <form>
-                        <input type="email" placeholder="Your Email" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email">
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
                     </form>
-                    <button class="btn btn-outline" id="coffeeBtn">Buy Us a Coffee</button>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Supreme Motive. All rights reserved.</p>
+            <div class="copyright">
+                <p>&copy; 2025 ABMUHA Design. All rights reserved. | Design and published by <a href="https://supremeamerapplications.vercel.app" target="_blank">SupremeAmer</a></p>
             </div>
         </div>
     </footer>
 
-    <!-- Coffee Modal -->
-    <div class="modal" id="coffeeModal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeModal">&times;</span>
-            <h2 class="modal-title">Buy Us a Coffee</h2>
-            <p>Your support helps us continue providing daily motivation and inspiration.</p>
-            
-            <div class="coffee-options">
-                <div class="coffee-option" data-amount="3">
-                    <h3>Small Coffee</h3>
-                    <p>$3</p>
-                </div>
-                <div class="coffee-option" data-amount="5">
-                    <h3>Medium Coffee</h3>
-                    <p>$5</p>
-                </div>
-                <div class="coffee-option" data-amount="10">
-                    <h3>Large Coffee</h3>
-                    <p>$10</p>
-                </div>
-            </div>
-            
-            <form id="donationForm">
-                <input type="number" placeholder="Or enter custom amount" min="1" step="1">
-                <button type="submit" class="btn" style="width: 100%;">Continue to Payment</button>
-            </form>
-        </div>
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
     </div>
-
-    <!-- Music Player -->
-    <div class="music-player" id="musicPlayer" style="display: none;">
-        <div class="music-info">Now Playing: Inspirational Music</div>
-        <div class="music-controls">
-            <button id="prevMusic"><i class="fas fa-step-backward"></i></button>
-            <button id="playPauseMusic"><i class="fas fa-play"></i></button>
-            <button id="nextMusic"><i class="fas fa-step-forward"></i></button>
-        </div>
-    </div>
-
-    <!-- Install Button -->
-    <button class="install-btn" id="installBtn">
-        <i class="fas fa-download"></i> Install App
-    </button>
-
-    <!-- Audio Element for Music -->
-    <audio id="backgroundMusic" loop>
-        <source src="https://cdn.pixabay.com/download/audio/2022/01/20/audio_d1715ab8b5.mp3?filename=inspirational-background-music-112921.mp3" type="audio/mpeg">
-    </audio>
 
     <script>
-        // DOM Elements
-        const themeToggle = document.getElementById('themeToggle');
-        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
-        const coffeeModal = document.getElementById('coffeeModal');
-        const coffeeBtn = document.getElementById('coffeeBtn');
-        const closeModal = document.getElementById('closeModal');
-        const installBtn = document.getElementById('installBtn');
-        const coffeeOptions = document.querySelectorAll('.coffee-option');
-        const newQuoteBtn = document.getElementById('newQuote');
-        const shareQuoteBtn = document.getElementById('shareQuote');
-        const favoriteQuoteBtn = document.getElementById('favoriteQuote');
-        const copyQuoteBtn = document.getElementById('copyQuote');
-        const quoteText = document.getElementById('quoteText');
-        const quoteAuthor = document.getElementById('quoteAuthor');
-        const quoteCounter = document.getElementById('quoteCounter');
-        const totalQuotes = document.getElementById('totalQuotes');
-        const categoryBtns = document.querySelectorAll('.category-btn');
-        const categoryCards = document.querySelectorAll('.category-card');
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                .then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                })
+                .catch(function(error) {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+            });
+        }
+
+        // Terms of Service Modal
         const termsModal = document.getElementById('termsModal');
         const acceptTerms = document.getElementById('acceptTerms');
         const declineTerms = document.getElementById('declineTerms');
-        const musicToggle = document.getElementById('musicToggle');
-        const mobileMusicToggle = document.getElementById('mobileMusicToggle');
-        const musicPlayer = document.getElementById('musicPlayer');
-        const backgroundMusic = document.getElementById('backgroundMusic');
-        const playPauseMusic = document.getElementById('playPauseMusic');
-        const prevMusic = document.getElementById('prevMusic');
-        const nextMusic = document.getElementById('nextMusic');
-        const quoteTypeToggle = document.getElementById('quoteTypeToggle');
-        const mobileQuoteTypeToggle = document.getElementById('mobileQuoteTypeToggle');
-        const textQuoteContainer = document.getElementById('textQuoteContainer');
-        const imageQuoteContainer = document.getElementById('imageQuoteContainer');
-        const imageQuote = document.getElementById('imageQuote');
-        const imageQuoteText = document.getElementById('imageQuoteText');
-        const imageQuoteAuthor = document.getElementById('imageQuoteAuthor');
-        const newImageQuoteBtn = document.getElementById('newImageQuote');
-        const shareImageQuoteBtn = document.getElementById('shareImageQuote');
-        const favoriteImageQuoteBtn = document.getElementById('favoriteImageQuote');
-        const downloadImageQuoteBtn = document.getElementById('downloadImageQuote');
-        const imageQuoteCounter = document.getElementById('imageQuoteCounter');
-        const totalImageQuotes = document.getElementById('totalImageQuotes');
-        const quoteSearch = document.getElementById('quoteSearch');
-        const searchBtn = document.getElementById('searchBtn');
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileNav = document.getElementById('mobileNav');
-        const closeMobileNav = document.getElementById('closeMobileNav');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-        // Quote type state
-        let currentQuoteType = 'text'; // 'text' or 'image'
-
-        // Music tracks
-        const musicTracks = [
-            'https://cdn.pixabay.com/download/audio/2022/01/20/audio_d1715ab8b5.mp3?filename=inspirational-background-music-112921.mp3',
-            'https://cdn.pixabay.com/download/audio/2022/03/15/audio_7c6b5d94f9.mp3?filename=peaceful-background-music-119095.mp3',
-            'https://cdn.pixabay.com/download/audio/2022/10/25/audio_ecb5f2c825.mp3?filename=soft-inspiring-background-amp-amp-piano-amp-amp-strings-124008.mp3'
-        ];
-        let currentTrack = 0;
-
-        // Expanded Quotes Array with 10,000+ quotes categorized
-        // Note: In a real application, you would load these from a database or external file
-        const quotes = [
-            // Motivation Quotes (2000+)
-            { text: "The only way to do great work is to love what you do.", author: "Steve Jobs", category: "motivation" },
-            { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt", category: "motivation" },
-            { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius", category: "motivation" },
-            { text: "Everything you've ever wanted is on the other side of fear.", author: "George Addair", category: "motivation" },
-            { text: "The only impossible journey is the one you never begin.", author: "Tony Robbins", category: "motivation" },
-            { text: "Your time is limited, so don't waste it living someone else's life.", author: "Steve Jobs", category: "motivation" },
-            { text: "I can't change the direction of the wind, but I can adjust my sails to always reach my destination.", author: "Jimmy Dean", category: "motivation" },
-            { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt", category: "motivation" },
-            
-            // Success Quotes (2000+)
-            { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill", category: "success" },
-            { text: "The way to get started is to quit talking and begin doing.", author: "Walt Disney", category: "success" },
-            { text: "Don't be afraid to give up the good to go for the great.", author: "John D. Rockefeller", category: "success" },
-            { text: "I find that the harder I work, the more luck I seem to have.", author: "Thomas Jefferson", category: "success" },
-            { text: "Success is walking from failure to failure with no loss of enthusiasm.", author: "Winston Churchill", category: "success" },
-            { text: "Success usually comes to those who are too busy to be looking for it.", author: "Henry David Thoreau", category: "success" },
-            { text: "The secret of success is to do the common thing uncommonly well.", author: "John D. Rockefeller", category: "success" },
-            
-            // Life Quotes (2000+)
-            { text: "Life is what happens when you're busy making other plans.", author: "John Lennon", category: "life" },
-            { text: "Get busy living or get busy dying.", author: "Stephen King", category: "life" },
-            { text: "You only live once, but if you do it right, once is enough.", author: "Mae West", category: "life" },
-            { text: "Life is not a problem to be solved, but a reality to be experienced.", author: "Soren Kierkegaard", category: "life" },
-            { text: "The purpose of our lives is to be happy.", author: "Dalai Lama", category: "life" },
-            { text: "Life is 10% what happens to you and 90% how you react to it.", author: "Charles R. Swindoll", category: "life" },
-            { text: "In the end, it's not the years in your life that count. It's the life in your years.", author: "Abraham Lincoln", category: "life" },
-            
-            // Wisdom Quotes (1500+)
-            { text: "The only true wisdom is in knowing you know nothing.", author: "Socrates", category: "wisdom" },
-            { text: "The journey of a thousand miles begins with one step.", author: "Lao Tzu", category: "wisdom" },
-            { text: "Life is really simple, but we insist on making it complicated.", author: "Confucius", category: "wisdom" },
-            { text: "Knowing others is intelligence; knowing yourself is true wisdom.", author: "Lao Tzu", category: "wisdom" },
-            { text: "The wise man does not lay up his own treasures. The more he gives to others, the more he has for his own.", author: "Lao Tzu", category: "wisdom" },
-            { text: "A wise man can learn more from a foolish question than a fool can learn from a wise answer.", author: "Bruce Lee", category: "wisdom" },
-            
-            // Love Quotes (1000+)
-            { text: "The best thing to hold onto in life is each other.", author: "Audrey Hepburn", category: "love" },
-            { text: "Love isn't something you find. Love is something that finds you.", author: "Loretta Young", category: "love" },
-            { text: "The greatest happiness of life is the conviction that we are loved; loved for ourselves, or rather, loved in spite of ourselves.", author: "Victor Hugo", category: "love" },
-            { text: "We are most alive when we're in love.", author: "John Updike", category: "love" },
-            { text: "Love is composed of a single soul inhabiting two bodies.", author: "Aristotle", category: "love" },
-            
-            // Leadership Quotes (1000+)
-            { text: "The greatest leader is not necessarily the one who does the greatest things. He is the one that gets the people to do the greatest things.", author: "Ronald Reagan", category: "leadership" },
-            { text: "Leadership is the capacity to translate vision into reality.", author: "Warren Bennis", category: "leadership" },
-            { text: "A leader is one who knows the way, goes the way, and shows the way.", author: "John C. Maxwell", category: "leadership" },
-            { text: "The function of leadership is to produce more leaders, not more followers.", author: "Ralph Nader", category: "leadership" },
-            { text: "Innovation distinguishes between a leader and a follower.", author: "Steve Jobs", category: "leadership" },
-            
-            // Positive Thinking Quotes (1000+)
-            { text: "Keep your face always toward the sunshine—and shadows will fall behind you.", author: "Walt Whitman", category: "positive" },
-            { text: "The positive thinker sees the invisible, feels the intangible, and achieves the impossible.", author: "Winston Churchill", category: "positive" },
-            { text: "Positive thinking will let you do everything better than negative thinking will.", author: "Zig Ziglar", category: "positive" },
-            { text: "Once you replace negative thoughts with positive ones, you'll start having positive results.", author: "Willie Nelson", category: "positive" },
-            { text: "The way I see it, if you want the rainbow, you gotta put up with the rain.", author: "Dolly Parton", category: "positive" },
-            
-            // Business Quotes (500+)
-            { text: "The biggest risk is not taking any risk. In a world that is changing quickly, the only strategy that is guaranteed to fail is not taking risks.", author: "Mark Zuckerberg", category: "business" },
-            { text: "Success in business requires training and discipline and hard work. But if you're not frightened by these things, the opportunities are just as great today as they ever were.", author: "David Rockefeller", category: "business" },
-            { text: "The critical ingredient is getting off your butt and doing something. It's as simple as that. A lot of people have ideas, but there are few who decide to do something about them now. Not tomorrow. Not next week. But today.", author: "Nolan Bushnell", category: "business" },
-            
-            // Additional quotes would be added here to reach 10,000+
-        ];
-
-        // Image Quotes Array with 300+ image quotes
-        // In a real application, these would point to actual image files
-        const imageQuotes = [
-            { 
-                text: "The only way to do great work is to love what you do.", 
-                author: "Steve Jobs", 
-                category: "motivation",
-                image: "https://source.unsplash.com/random/600x400/?inspiration,motivation"
-            },
-            { 
-                text: "Believe you can and you're halfway there.", 
-                author: "Theodore Roosevelt", 
-                category: "motivation",
-                image: "https://source.unsplash.com/random/600x400/?belief,success"
-            },
-            { 
-                text: "It does not matter how slowly you go as long as you do not stop.", 
-                author: "Confucius", 
-                category: "motivation",
-                image: "https://source.unsplash.com/random/600x400/?perseverance,progress"
-            },
-            { 
-                text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", 
-                author: "Winston Churchill", 
-                category: "success",
-                image: "https://source.unsplash.com/random/600x400/?success,achievement"
-            },
-            { 
-                text: "Life is what happens when you're busy making other plans.", 
-                author: "John Lennon", 
-                category: "life",
-                image: "https://source.unsplash.com/random/600x400/?life,plans"
-            },
-            { 
-                text: "The only true wisdom is in knowing you know nothing.", 
-                author: "Socrates", 
-                category: "wisdom",
-                image: "https://source.unsplash.com/random/600x400/?wisdom,knowledge"
-            },
-            { 
-                text: "The best thing to hold onto in life is each other.", 
-                author: "Audrey Hepburn", 
-                category: "love",
-                image: "https://source.unsplash.com/random/600x400/?love,connection"
-            },
-            { 
-                text: "The greatest leader is not necessarily the one who does the greatest things.", 
-                author: "Ronald Reagan", 
-                category: "leadership",
-                image: "https://source.unsplash.com/random/600x400/?leadership,guidance"
-            },
-            { 
-                text: "Keep your face always toward the sunshine—and shadows will fall behind you.", 
-                author: "Walt Whitman", 
-                category: "positive",
-                image: "https://source.unsplash.com/random/600x400/?positivity,sunshine"
-            },
-            // Additional image quotes would be added here to reach 300+
-        ];
-
-        // Set total quotes count
-        totalQuotes.textContent = quotes.length;
-        totalImageQuotes.textContent = imageQuotes.length;
-
-        // Current category and quote index
-        let currentCategory = 'all';
-        let currentQuoteIndex = 0;
-        let currentImageQuoteIndex = 0;
-        let filteredQuotes = [...quotes];
-        let filteredImageQuotes = [...imageQuotes];
-
-        // Check if terms were already accepted
+        // Check if user has already accepted terms
         if (!localStorage.getItem('termsAccepted')) {
-            termsModal.style.display = 'flex';
+            termsModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        } else {
+            termsModal.classList.add('hidden');
         }
 
-        // Terms Acceptance
         acceptTerms.addEventListener('click', () => {
             localStorage.setItem('termsAccepted', 'true');
-            termsModal.style.display = 'none';
+            termsModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
         });
 
         declineTerms.addEventListener('click', () => {
-            alert('You must accept the terms to use Supreme Motive.');
+            alert('You must accept the Terms of Service to use this website.');
         });
 
-        // Mobile Navigation
-        menuToggle.addEventListener('click', () => {
-            mobileNav.classList.add('active');
+        // Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+            }, 1500);
         });
 
-        closeMobileNav.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-        });
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
 
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
-            });
-        });
-
-        // Theme Toggle
-        function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-            if (document.body.classList.contains('dark-mode')) {
-                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                mobileThemeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                mobileThemeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        themeToggle.addEventListener('click', toggleTheme);
-        mobileThemeToggle.addEventListener('click', toggleTheme);
-
-        // Check saved theme
-        if (localStorage.getItem('theme') === 'dark') {
+        // Check for saved theme preference or respect OS preference
+        if (localStorage.getItem('theme') === 'dark' || 
+            (window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'))) {
             document.body.classList.add('dark-mode');
-            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            mobileThemeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
         }
 
-        // Quote Type Toggle
-        function toggleQuoteType() {
-            if (currentQuoteType === 'text') {
-                currentQuoteType = 'image';
-                quoteTypeToggle.innerHTML = '<i class="fas fa-font"></i>';
-                mobileQuoteTypeToggle.innerHTML = '<i class="fas fa-font"></i>';
-                textQuoteContainer.style.display = 'none';
-                imageQuoteContainer.style.display = 'block';
-                displayImageQuote();
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
             } else {
-                currentQuoteType = 'text';
-                quoteTypeToggle.innerHTML = '<i class="fas fa-image"></i>';
-                mobileQuoteTypeToggle.innerHTML = '<i class="fas fa-image"></i>';
-                textQuoteContainer.style.display = 'block';
-                imageQuoteContainer.style.display = 'none';
-                displayQuote();
-            }
-            localStorage.setItem('quoteType', currentQuoteType);
-        }
-
-        quoteTypeToggle.addEventListener('click', toggleQuoteType);
-        mobileQuoteTypeToggle.addEventListener('click', toggleQuoteType);
-
-        // Check saved quote type
-        if (localStorage.getItem('quoteType') === 'image') {
-            currentQuoteType = 'image';
-            quoteTypeToggle.innerHTML = '<i class="fas fa-font"></i>';
-            mobileQuoteTypeToggle.innerHTML = '<i class="fas fa-font"></i>';
-            textQuoteContainer.style.display = 'none';
-            imageQuoteContainer.style.display = 'block';
-        } else {
-            currentQuoteType = 'text';
-            quoteTypeToggle.innerHTML = '<i class="fas fa-image"></i>';
-            mobileQuoteTypeToggle.innerHTML = '<i class="fas fa-image"></i>';
-            textQuoteContainer.style.display = 'block';
-            imageQuoteContainer.style.display = 'none';
-        }
-
-        // Music Toggle
-        function toggleMusic() {
-            if (musicPlayer.style.display === 'none') {
-                musicPlayer.style.display = 'flex';
-                backgroundMusic.play();
-                playPauseMusic.innerHTML = '<i class="fas fa-pause"></i>';
-                musicToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
-                mobileMusicToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
-            } else {
-                musicPlayer.style.display = 'none';
-                backgroundMusic.pause();
-                musicToggle.innerHTML = '<i class="fas fa-music"></i>';
-                mobileMusicToggle.innerHTML = '<i class="fas fa-music"></i>';
-            }
-        }
-
-        musicToggle.addEventListener('click', toggleMusic);
-        mobileMusicToggle.addEventListener('click', toggleMusic);
-
-        // Music Controls
-        playPauseMusic.addEventListener('click', () => {
-            if (backgroundMusic.paused) {
-                backgroundMusic.play();
-                playPauseMusic.innerHTML = '<i class="fas fa-pause"></i>';
-            } else {
-                backgroundMusic.pause();
-                playPauseMusic.innerHTML = '<i class="fas fa-play"></i>';
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
             }
         });
 
-        prevMusic.addEventListener('click', () => {
-            currentTrack = (currentTrack - 1 + musicTracks.length) % musicTracks.length;
-            backgroundMusic.src = musicTracks[currentTrack];
-            backgroundMusic.play();
-            playPauseMusic.innerHTML = '<i class="fas fa-pause"></i>';
-        });
+        // Simple smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
 
-        nextMusic.addEventListener('click', () => {
-            currentTrack = (currentTrack + 1) % musicTracks.length;
-            backgroundMusic.src = musicTracks[currentTrack];
-            backgroundMusic.play();
-            playPauseMusic.innerHTML = '<i class="fas fa-pause"></i>';
-        });
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
 
-        // Coffee Modal
-        coffeeBtn.addEventListener('click', () => {
-            coffeeModal.style.display = 'flex';
-        });
-
-        closeModal.addEventListener('click', () => {
-            coffeeModal.style.display = 'none';
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === coffeeModal) {
-                coffeeModal.style.display = 'none';
-            }
-        });
-
-        // Coffee Options Selection
-        coffeeOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                coffeeOptions.forEach(opt => opt.classList.remove('selected'));
-                option.classList.add('selected');
-                document.querySelector('#donationForm input').value = option.getAttribute('data-amount');
-            });
-        });
-
-        // Donation Form
-        document.getElementById('donationForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const amount = document.querySelector('#donationForm input').value;
-            if (amount) {
-                alert(`Thank you for your donation of $${amount}! This is a demo - no real payment will be processed.`);
-                coffeeModal.style.display = 'none';
-            }
-        });
-
-        // Contact Form
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your message! This is a demo - no message was actually sent.');
-            e.target.reset();
-        });
-
-        // Newsletter Form
-        document.querySelector('.footer-newsletter form').add.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for subscribing to our newsletter!');
-            e.target.reset();
-        });
-
-        // Category Filtering
-        categoryBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                categoryBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                currentCategory = btn.getAttribute('data-category');
-                
-                if (currentCategory === 'all') {
-                    filteredQuotes = [...quotes];
-                    filteredImageQuotes = [...imageQuotes];
-                } else {
-                    filteredQuotes = quotes.filter(quote => quote.category === currentCategory);
-                    filteredImageQuotes = imageQuotes.filter(quote => quote.category === currentCategory);
-                }
-                
-                // Reset to first quote in category
-                currentQuoteIndex = 0;
-                currentImageQuoteIndex = 0;
-                
-                if (currentQuoteType === 'text') {
-                    displayQuote();
-                } else {
-                    displayImageQuote();
-                }
-            });
-        });
-
-        // Category Cards
-        categoryCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const category = card.getAttribute('data-category');
-                
-                // Find and activate the corresponding category button
-                categoryBtns.forEach(btn => {
-                    if (btn.getAttribute('data-category') === category) {
-                        btn.click();
-                    }
-                });
-                
-                // Scroll to quote section
-                document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        // Quote Search
-        searchBtn.addEventListener('click', searchQuotes);
-        quoteSearch.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                searchQuotes();
-            }
-        });
-
-        function searchQuotes() {
-            const searchTerm = quoteSearch.value.toLowerCase().trim();
-            
-            if (searchTerm === '') {
-                // Reset to current category if search is empty
-                if (currentCategory === 'all') {
-                    filteredQuotes = [...quotes];
-                    filteredImageQuotes = [...imageQuotes];
-                } else {
-                    filteredQuotes = quotes.filter(quote => quote.category === currentCategory);
-                    filteredImageQuotes = imageQuotes.filter(quote => quote.category === currentCategory);
-                }
-            } else {
-                // Filter quotes by search term
-                filteredQuotes = quotes.filter(quote => 
-                    quote.text.toLowerCase().includes(searchTerm) || 
-                    quote.author.toLowerCase().includes(searchTerm)
-                );
-                
-                filteredImageQuotes = imageQuotes.filter(quote => 
-                    quote.text.toLowerCase().includes(searchTerm) || 
-                    quote.author.toLowerCase().includes(searchTerm)
-                );
-            }
-            
-            // Reset indices and display
-            currentQuoteIndex = 0;
-            currentImageQuoteIndex = 0;
-            
-            if (currentQuoteType === 'text') {
-                displayQuote();
-            } else {
-                displayImageQuote();
-            }
-        }
-
-        // Quote Display Functions
-        function displayQuote() {
-            if (filteredQuotes.length > 0) {
-                const quote = filteredQuotes[currentQuoteIndex];
-                quoteText.textContent = `"${quote.text}"`;
-                quoteAuthor.textContent = `- ${quote.author}`;
-                quoteCounter.textContent = currentQuoteIndex + 1;
-            } else {
-                quoteText.textContent = '"No quotes found matching your search."';
-                quoteAuthor.textContent = '- Supreme Motive';
-                quoteCounter.textContent = '0';
-            }
-        }
-
-        function displayImageQuote() {
-            if (filteredImageQuotes.length > 0) {
-                const quote = filteredImageQuotes[currentImageQuoteIndex];
-                imageQuote.src = quote.image;
-                imageQuote.alt = `Inspirational quote: ${quote.text} by ${quote.author}`;
-                imageQuoteText.textContent = `"${quote.text}"`;
-                imageQuoteAuthor.textContent = `- ${quote.author}`;
-                imageQuoteCounter.textContent = currentImageQuoteIndex + 1;
-            } else {
-                imageQuoteText.textContent = '"No image quotes found matching your search."';
-                imageQuoteAuthor.textContent = '- Supreme Motive';
-                imageQuoteCounter.textContent = '0';
-            }
-        }
-
-        // New Quote Buttons
-        newQuoteBtn.addEventListener('click', () => {
-            if (filteredQuotes.length > 0) {
-                currentQuoteIndex = (currentQuoteIndex + 1) % filteredQuotes.length;
-                displayQuote();
-            }
-        });
-
-        newImageQuoteBtn.addEventListener('click', () => {
-            if (filteredImageQuotes.length > 0) {
-                currentImageQuoteIndex = (currentImageQuoteIndex + 1) % filteredImageQuotes.length;
-                displayImageQuote();
-            }
-        });
-
-        // Share Quote Buttons
-        shareQuoteBtn.addEventListener('click', () => {
-            if (filteredQuotes.length > 0) {
-                const quote = filteredQuotes[currentQuoteIndex];
-                shareContent(`"${quote.text}" - ${quote.author}`);
-            }
-        });
-
-        shareImageQuoteBtn.addEventListener('click', () => {
-            if (filteredImageQuotes.length > 0) {
-                const quote = filteredImageQuotes[currentImageQuoteIndex];
-                shareContent(`"${quote.text}" - ${quote.author}`);
-            }
-        });
-
-        function shareContent(text) {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Inspirational Quote',
-                    text: text,
-                    url: window.location.href
-                })
-                .catch(error => {
-                    console.log('Error sharing:', error);
-                });
-            } else {
-                alert('Web Share API not supported in your browser. You can manually copy the quote.');
-            }
-        }
-
-        // Favorite Quote Buttons
-        favoriteQuoteBtn.addEventListener('click', () => {
-            if (filteredQuotes.length > 0) {
-                const quote = filteredQuotes[currentQuoteIndex];
-                addToFavorites(quote.text, quote.author, 'text');
-            }
-        });
-
-        favoriteImageQuoteBtn.addEventListener('click', () => {
-            if (filteredImageQuotes.length > 0) {
-                const quote = filteredImageQuotes[currentImageQuoteIndex];
-                addToFavorites(quote.text, quote.author, 'image');
-            }
-        });
-
-        function addToFavorites(text, author, type) {
-            // Get existing favorites or initialize empty array
-            const favorites = JSON.parse(localStorage.getItem('favoriteQuotes') || '[]');
-            
-            // Add new favorite
-            favorites.push({
-                text: text,
-                author: author,
-                type: type,
-                date: new Date().toISOString()
-            });
-            
-            // Save back to localStorage
-            localStorage.setItem('favoriteQuotes', JSON.stringify(favorites));
-            
-            alert('Quote added to favorites!');
-        }
-
-        // Copy Quote Button
-        copyQuoteBtn.addEventListener('click', () => {
-            if (filteredQuotes.length > 0) {
-                const quote = filteredQuotes[currentQuoteIndex];
-                const textToCopy = `"${quote.text}" - ${quote.author}`;
-                
-                navigator.clipboard.writeText(textToCopy)
-                    .then(() => {
-                        alert('Quote copied to clipboard!');
-                    })
-                    .catch(err => {
-                        console.error('Failed to copy: ', err);
-                        alert('Failed to copy quote to clipboard.');
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
                     });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
             }
         });
 
-        // Download Image Quote Button
-        downloadImageQuoteBtn.addEventListener('click', () => {
-            if (filteredImageQuotes.length > 0) {
-                alert('In a real implementation, this would download the image quote. This is a demo feature.');
-                // Actual implementation would require creating a downloadable image
-                // with the quote text overlay, which is more complex
-            }
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
-        // PWA Installation
+        // Form submission to WhatsApp
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Format the message for WhatsApp
+            const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+            
+            // Open WhatsApp with the pre-filled message
+            window.open(`https://wa.me/2348061947053?text=${whatsappMessage}`, '_blank');
+            
+            // Reset the form
+            contactForm.reset();
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.portfolio-item, .service-item, .testimonial-item, .section-title, .about-content, .contact-content').forEach(item => {
+            observer.observe(item);
+        });
+
+        // PWA Install Prompt
         let deferredPrompt;
+        const pwaInstallPrompt = document.getElementById('pwaInstallPrompt');
+        const pwaInstallBtn = document.getElementById('pwaInstall');
+        const pwaDismissBtn = document.getElementById('pwaDismiss');
+        const installAppButton = document.getElementById('installAppButton');
 
         window.addEventListener('beforeinstallprompt', (e) => {
             // Prevent the mini-infobar from appearing on mobile
@@ -1929,58 +1786,60 @@
             // Stash the event so it can be triggered later
             deferredPrompt = e;
             // Show the install button
-            installBtn.style.display = 'flex';
-            
-            // Log the event for debugging
-            console.log('beforeinstallprompt event fired');
+            installAppButton.style.display = 'flex';
+
+            // Show the install prompt after 5 seconds
+            setTimeout(() => {
+                if (!localStorage.getItem('installPromptDismissed')) {
+                    pwaInstallPrompt.classList.add('visible');
+                }
+            }, 5000);
         });
 
-        installBtn.addEventListener('click', async () => {
-            if (deferredPrompt) {
-                // Show the install prompt
-                deferredPrompt.prompt();
-                // Wait for the user to respond to the prompt
-                const { outcome } = await deferredPrompt.userChoice;
-                // Optionally, send analytics event with outcome of user choice
-                console.log(`User response to the install prompt: ${outcome}`);
-                // We've used the prompt, and can't use it again, throw it away
-                deferredPrompt = null;
-                // Hide the install button
-                installBtn.style.display = 'none';
-            }
-        });
+        // Install button click
+        installAppButton.addEventListener('click', async () => {
+            if (!deferredPrompt) return;
 
-        window.addEventListener('appinstalled', () => {
-            // Hide the install button
-            installBtn.style.display = 'none';
-            // Clear the deferredPrompt so it can be garbage collected
+            // Show the install prompt
+            deferredPrompt.prompt();
+            // Wait for the user to respond to the prompt
+            const { outcome } = await deferredPrompt.userChoice;
+            // We've used the prompt, and can't use it again, throw it away
             deferredPrompt = null;
-            // Optionally, send analytics event to indicate successful installation
-            console.log('PWA was installed');
+            // Hide the install button
+            installAppButton.style.display = 'none';
+            pwaInstallPrompt.classList.remove('visible');
         });
 
-        // Service Worker Registration
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
-                .then(registration => {
-                    console.log('SW registered: ', registration);
-                })
-                .catch(registrationError => {
-                    console.log('SW registration failed: ', registrationError);
-                });
-            });
-        }
+        pwaInstallBtn.addEventListener('click', async () => {
+            if (!deferredPrompt) return;
 
-        // Initialize with a random quote
-        currentQuoteIndex = Math.floor(Math.random() * quotes.length);
-        currentImageQuoteIndex = Math.floor(Math.random() * imageQuotes.length);
-        
-        if (currentQuoteType === 'text') {
-            displayQuote();
-        } else {
-            displayImageQuote();
-        }
+            // Show the install prompt
+            deferredPrompt.prompt();
+            // Wait for the user to respond to the prompt
+            const { outcome } = await deferredPrompt.userChoice;
+            // We've used the prompt, and can't use it again, throw it away
+            deferredPrompt = null;
+            // Hide the install button
+            installAppButton.style.display = 'none';
+            pwaInstallPrompt.classList.remove('visible');
+        });
+
+        pwaDismissBtn.addEventListener('click', () => {
+            pwaInstallPrompt.classList.remove('visible');
+            localStorage.setItem('installPromptDismissed', 'true');
+        });
+
+        // Online/Offline detection
+        const offlineStatus = document.getElementById('offlineStatus');
+
+        window.addEventListener('online', () => {
+            offlineStatus.classList.remove('visible');
+        });
+
+        window.addEventListener('offline', () => {
+            offlineStatus.classList.add('visible');
+        });
     </script>
 </body>
 </html>
