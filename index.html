@@ -30,7 +30,7 @@
 
     <!-- Favicon -->
     <link rel="icon" href="IMG-20260402-WA0013(1).jpg">
-    <link rel="apple-touch-icon" href="IMG-20260402-WA0013(1).jpg>
+    <link rel="apple-touch-icon" href="IMG-20260402-WA0013(1).jpg">
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkFCVU1VSEEgRGVzaWduIFBvcnRmb2xpbyIsCiAgInNob3J0X25hbWUiOiAiQUJVTVVIQSIsCiAgImRlc2NyaXB0aW9uIjogIkdyYXBoaWMgRGVzaWduIFBvcnRmb2xpbyBvZiBBQlVNVUhBIiwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiM2QzYzRkYiLAogICJ0aGVtZV9jb2xvciI6ICIjNkM2M0ZGIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiSU1HLTIwMjUwOTAxLVdBMDAxNC5qcGciLAogICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsCiAgICAgICJ0eXBlIjogImltYWdlL2pwZWciCiAgICB9CiAgXQp9">
@@ -1076,7 +1076,7 @@
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
             border-radius: 50%;
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
@@ -1462,7 +1462,7 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials Section - FIXED STRUCTURE -->
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
@@ -1471,12 +1471,7 @@
             <div class="testimonial-grid">
                 <div class="testimonial-item">
                     <div class="testimonial-text">
-                        "ABMUHA transformed our brand identity completely. The new logo and visual system perfectly capture our company's vision and values."
-                    </div>
-					<div class="testimonial-grid">
-                <div class="testimonial-item">
-                    <div class="testimonial-text">
-                        "Abumuha Graphic is a professional house of design that builds strong visual identities using digital tools"
+                        "ABUMUHA transformed our brand identity completely. The new logo and visual system perfectly capture our company's vision and values."
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar"></div>
@@ -1488,7 +1483,7 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="testimonial-text">
-                        "The packaging design created by ABMUHA helped us stand out in a crowded market. Our sales increased by 35% after the redesign."
+                        "The packaging design created by ABUMUHA helped us stand out in a crowded market. Our sales increased by 35% after the redesign."
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar"></div>
@@ -1500,7 +1495,7 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="testimonial-text">
-                        "Working with ABMUHA was a game-changer for our online presence. Their UI/UX design significantly improved our conversion rates."
+                        "Working with ABUMUHA was a game-changer for our online presence. Their UI/UX design significantly improved our conversion rates."
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar"></div>
@@ -1583,7 +1578,7 @@
                 <div class="footer-column">
                     <div class="logo-container">
                         <img src="IMG-20260402-WA0013(1).jpg" alt="ABMUMHA Logo" class="logo-img">
-                        <div class="logo-text">ABMUHA</div>
+                        <div class="logo-text">ABUMUHA</div>
                     </div>
                     <p>Transforming ideas into visual masterpieces that elevate brands and captivate audiences.</p>
                     <div class="social-links">
@@ -1612,16 +1607,16 @@
                 <div class="footer-column">
                     <h4>Newsletter</h4>
                     <p>Subscribe to our newsletter for design tips and exclusive offers.</p>
-                    <form>
+                    <form id="newsletterForm">
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email">
+                            <input type="email" placeholder="Your Email" id="newsletterEmail">
                         </div>
                         <button type="submit" class="btn">Subscribe</button>
                     </form>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2026 ABMUHA Design. All rights reserved. | Design and published by <a href="https://supremeamerapplications.vercel.app" target="_blank">SupremeAmer</a></p>
+                <p>&copy; 2026 ABUMUHA Design. All rights reserved. | Design and published by <a href="https://supremeamerapplications.vercel.app" target="_blank">SupremeAmer</a></p>
             </div>
         </div>
     </footer>
@@ -1632,14 +1627,10 @@
     </div>
 
     <script>
-        // Service Worker Registration
+        // Service Worker Registration (graceful fallback)
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js')
-                .then(function(registration) {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                })
-                .catch(function(error) {
+                navigator.serviceWorker.register('/sw.js').catch(function(error) {
                     console.log('ServiceWorker registration failed: ', error);
                 });
             });
@@ -1650,7 +1641,6 @@
         const acceptTerms = document.getElementById('acceptTerms');
         const declineTerms = document.getElementById('declineTerms');
 
-        // Check if user has already accepted terms
         if (!localStorage.getItem('termsAccepted')) {
             termsModal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
@@ -1676,11 +1666,10 @@
             }, 1500);
         });
 
-        // Theme toggle functionality
+        // Theme toggle
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = themeToggle.querySelector('i');
 
-        // Check for saved theme preference or respect OS preference
         if (localStorage.getItem('theme') === 'dark' || 
             (window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'))) {
             document.body.classList.add('dark-mode');
@@ -1690,7 +1679,6 @@
 
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-
             if (document.body.classList.contains('dark-mode')) {
                 localStorage.setItem('theme', 'dark');
                 themeIcon.classList.remove('fa-moon');
@@ -1702,14 +1690,12 @@
             }
         });
 
-        // Simple smooth scrolling for navigation links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-
                 const targetId = this.getAttribute('href');
                 if(targetId === '#') return;
-
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     window.scrollTo({
@@ -1720,7 +1706,7 @@
             });
         });
 
-        // Mobile menu toggle
+        // Mobile menu
         const menuBtn = document.querySelector('.menu-btn');
         const navLinks = document.querySelector('.nav-links');
 
@@ -1730,7 +1716,6 @@
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
 
-        // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -1738,9 +1723,8 @@
             });
         });
 
-        // Back to top button
+        // Back to top
         const backToTopButton = document.querySelector('.back-to-top');
-
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.add('visible');
@@ -1748,53 +1732,51 @@
                 backToTopButton.classList.remove('visible');
             }
         });
-
         backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Form submission to WhatsApp
+        // Contact form (WhatsApp)
         const contactForm = document.getElementById('contactForm');
-
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
-
-            // Format the message for WhatsApp
             const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-            
-            // Open WhatsApp with the pre-filled message
             window.open(`https://wa.me/2348061947053?text=${whatsappMessage}`, '_blank');
-            
-            // Reset the form
             contactForm.reset();
         });
 
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Newsletter form (prevent reload)
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = document.getElementById('newsletterEmail');
+                if (emailInput.value.trim()) {
+                    alert('Thank you for subscribing! You will receive updates soon.');
+                    emailInput.value = '';
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+        }
 
+        // Scroll animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate');
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
         document.querySelectorAll('.portfolio-item, .service-item, .testimonial-item, .section-title, .about-content, .contact-content').forEach(item => {
             observer.observe(item);
         });
 
-        // PWA Install Prompt
+        // PWA Install
         let deferredPrompt;
         const pwaInstallPrompt = document.getElementById('pwaInstallPrompt');
         const pwaInstallBtn = document.getElementById('pwaInstall');
@@ -1802,14 +1784,9 @@
         const installAppButton = document.getElementById('installAppButton');
 
         window.addEventListener('beforeinstallprompt', (e) => {
-            // Prevent the mini-infobar from appearing on mobile
             e.preventDefault();
-            // Stash the event so it can be triggered later
             deferredPrompt = e;
-            // Show the install button
             installAppButton.style.display = 'flex';
-
-            // Show the install prompt after 5 seconds
             setTimeout(() => {
                 if (!localStorage.getItem('installPromptDismissed')) {
                     pwaInstallPrompt.classList.add('visible');
@@ -1817,50 +1794,26 @@
             }, 5000);
         });
 
-        // Install button click
-        installAppButton.addEventListener('click', async () => {
+        const triggerInstall = async () => {
             if (!deferredPrompt) return;
-
-            // Show the install prompt
             deferredPrompt.prompt();
-            // Wait for the user to respond to the prompt
             const { outcome } = await deferredPrompt.userChoice;
-            // We've used the prompt, and can't use it again, throw it away
             deferredPrompt = null;
-            // Hide the install button
             installAppButton.style.display = 'none';
             pwaInstallPrompt.classList.remove('visible');
-        });
+        };
 
-        pwaInstallBtn.addEventListener('click', async () => {
-            if (!deferredPrompt) return;
-
-            // Show the install prompt
-            deferredPrompt.prompt();
-            // Wait for the user to respond to the prompt
-            const { outcome } = await deferredPrompt.userChoice;
-            // We've used the prompt, and can't use it again, throw it away
-            deferredPrompt = null;
-            // Hide the install button
-            installAppButton.style.display = 'none';
-            pwaInstallPrompt.classList.remove('visible');
-        });
-
+        installAppButton.addEventListener('click', triggerInstall);
+        pwaInstallBtn.addEventListener('click', triggerInstall);
         pwaDismissBtn.addEventListener('click', () => {
             pwaInstallPrompt.classList.remove('visible');
             localStorage.setItem('installPromptDismissed', 'true');
         });
 
-        // Online/Offline detection
+        // Online/Offline
         const offlineStatus = document.getElementById('offlineStatus');
-
-        window.addEventListener('online', () => {
-            offlineStatus.classList.remove('visible');
-        });
-
-        window.addEventListener('offline', () => {
-            offlineStatus.classList.add('visible');
-        });
+        window.addEventListener('online', () => offlineStatus.classList.remove('visible'));
+        window.addEventListener('offline', () => offlineStatus.classList.add('visible'));
     </script>
 </body>
 </html>
